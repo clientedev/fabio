@@ -1,0 +1,16 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "services": {
+    "famajo-site": {
+      "name": "famajo-site",
+      "sourcePath": "artifacts/famajo-site",
+      "numReplicas": 1,
+      "build": {
+        "builder": "NIXPACKS"
+      },
+      "env": {
+        "BASE_PATH": "/"
+      }
+    }
+  }
+}
