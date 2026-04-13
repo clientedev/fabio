@@ -1,6 +1,41 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import logoImg from "@assets/Logo_Famajo_-_Copia.JPG_1776107021970.jpeg";
 import fabioImg from "@assets/image_1776107063260.png";
+
+function LogoTransparent({ height, style }: { height: number; style?: React.CSSProperties }) {
+  const [dataUrl, setDataUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      const ctx = canvas.getContext("2d")!;
+      ctx.drawImage(img, 0, 0);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const d = imageData.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const r = d[i], g = d[i + 1], b = d[i + 2];
+        // Detect dark navy pixels: all channels dark, blue is dominant
+        const isDarkNavy = r < 75 && g < 85 && b < 115 && b >= r && b >= g;
+        if (isDarkNavy) {
+          // Fade out: alpha proportional to "how navy" the pixel is
+          const navyStrength = Math.max(0, 1 - (r + g) / 100);
+          d[i + 3] = Math.round(d[i + 3] * (1 - navyStrength * 0.95));
+        }
+      }
+      ctx.putImageData(imageData, 0, 0);
+      setDataUrl(canvas.toDataURL("image/png"));
+    };
+    img.src = logoImg;
+  }, []);
+
+  if (!dataUrl) {
+    return <img src={logoImg} alt="Famajo" style={{ height, objectFit: "contain", ...style }} />;
+  }
+  return <img src={dataUrl} alt="Famajo" style={{ height, objectFit: "contain", ...style }} />;
+}
 
 function useReveal() {
   useEffect(() => {
@@ -93,13 +128,13 @@ export default function Home() {
       {/* ─── NAVBAR ─── */}
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: "rgba(13,18,32,0.82)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
+        background: "rgba(10,14,26,0.96)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
         borderBottom: "1px solid rgba(200,168,75,0.1)",
       }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
-          <img src={logoImg} alt="Famajo" style={{ height: 44, objectFit: "contain" }} />
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 80 }}>
+          <LogoTransparent height={72} />
           <nav style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
             {[["#sobre", "Sobre"], ["#solucoes", "Soluções"], ["#contato", "Contato"]].map(([href, label]) => (
               <a key={href} href={href} className="nav-link">{label}</a>
@@ -222,13 +257,12 @@ export default function Home() {
           {/* Left visual: logo + quote card */}
           <div className="reveal" style={{ position: "relative" }}>
             <div style={{
-              background: "rgba(20,30,48,0.55)",
-              backdropFilter: "blur(20px)",
+              background: "#0c1120",
               border: "1px solid rgba(200,168,75,0.15)",
               borderRadius: 24,
               padding: "3rem",
             }}>
-              <img src={logoImg} alt="Famajo" style={{ height: 80, marginBottom: "2rem", objectFit: "contain" }} />
+              <LogoTransparent height={120} style={{ marginBottom: "2rem" }} />
               <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.25rem", lineHeight: 1.65, color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>
                 "Nosso propósito é proteger pessoas, famílias e empresas, transformando riscos financeiros em tranquilidade e segurança."
               </p>
@@ -424,7 +458,7 @@ export default function Home() {
       <footer style={{ borderTop: "1px solid rgba(200,168,75,0.1)", padding: "2.5rem 2rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <img src={logoImg} alt="Famajo" style={{ height: 38, objectFit: "contain" }} />
+            <LogoTransparent height={56} />
             <div style={{ width: 1, height: 32, background: "rgba(200,168,75,0.2)" }} />
             <span style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.4)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Famajo Corretora</span>
           </div>
