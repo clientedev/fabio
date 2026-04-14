@@ -30,3 +30,27 @@ id = "HCLkGePuCaF27qrUdrUlR"
 uri = "file://artifacts/famajo-site/public/service-saude.png"
 type = "image"
 title = "health plan stethoscope medical"
+
+[[generated]]
+id = "Us8W6QlZycdRrzUnufBVp"
+uri = "file://artifacts/famajo-site/public/benefit-inventario.png"
+type = "image"
+title = "legal document wax seal estate"
+
+[[generated]]
+id = "8w0-RSIJqoMbNKaTZKtpJ"
+uri = "file://artifacts/famajo-site/public/benefit-fiscal.png"
+type = "image"
+title = "tax exemption gold coins check"
+
+[[generated]]
+id = "cHbarAy65-ZZFd_ZsJs7Q"
+uri = "file://artifacts/famajo-site/public/benefit-beneficiarios.png"
+type = "image"
+title = "family protected golden shield"
+
+[[generated]]
+id = "1NUtPkXAegABQG7w5Bewq"
+uri = "file://artifacts/famajo-site/public/benefit-impenhorabilidade.png"
+type = "image"
+title = "gold padlock protection unchained"

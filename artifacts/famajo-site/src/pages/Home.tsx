@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
 import logoImg from "@assets/image_1776108637978.png";
 import fabioImg from "@assets/image_1776107063260.png";
 
