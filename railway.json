@@ -9,7 +9,8 @@
         "builder": "NIXPACKS"
       },
       "env": {
-        "BASE_PATH": "/"
+        "BASE_PATH": "/",
+        "NIXPACKS_PNPM_INSTALL_ARGS": "--no-frozen-lockfile"
       }
     }
   }
