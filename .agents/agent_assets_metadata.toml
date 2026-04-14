@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "5tX-P9mM_AhNmFyo1zTJe"
+uri = "file://artifacts/famajo-site/public/service-vida.png"
+type = "image"
+title = "life insurance shield handshake"
+
+[[generated]]
+id = "W97pKXZaeOHJGhXXAiRy2"
+uri = "file://artifacts/famajo-site/public/service-laboral.png"
+type = "image"
+title = "labor protection worker safety"
+
+[[generated]]
+id = "RuZnXa2TN7cwdQf3OZafF"
+uri = "file://artifacts/famajo-site/public/service-empresarial.png"
+type = "image"
+title = "business succession corporate building"
+
+[[generated]]
+id = "695DnutHCh6UhPGUJct4s"
+uri = "file://artifacts/famajo-site/public/service-consorcio.png"
+type = "image"
+title = "consortium car house keys luxury"
+
+[[generated]]
+id = "HCLkGePuCaF27qrUdrUlR"
+uri = "file://artifacts/famajo-site/public/service-saude.png"
+type = "image"
+title = "health plan stethoscope medical"

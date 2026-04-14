@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import logoImg from "@assets/image_1776108637978.png";
 import fabioImg from "@assets/image_1776107063260.png";
 
@@ -32,6 +32,7 @@ function useReveal() {
 
 const services = [
   {
+    imageUrl: "/service-vida.png",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -51,6 +52,7 @@ const services = [
         <line x1="10" y1="14" x2="14" y2="14"/>
       </svg>
     ),
+    imageUrl: "/service-laboral.png",
     title: "Proteção Laboral",
     subtitle: "Sua renda protegida em vida",
     desc: "Suporte financeiro imediato para situações críticas que afetam sua capacidade de trabalho.",
@@ -63,6 +65,7 @@ const services = [
         <polyline points="9 22 9 12 15 12 15 22"/>
       </svg>
     ),
+    imageUrl: "/service-empresarial.png",
     title: "Sucessão Empresarial",
     subtitle: "Blindagem do CNPJ",
     desc: "Evita descapitalização e a entrada de terceiros na gestão da empresa em momentos críticos.",
@@ -76,6 +79,7 @@ const services = [
         <line x1="12" y1="16" x2="12.01" y2="16"/>
       </svg>
     ),
+    imageUrl: "/service-consorcio.png",
     title: "Consórcios",
     subtitle: "Aquisição planejada sem juros",
     desc: "Planejamento estratégico para aquisição de bens e serviços sem o peso dos juros.",
@@ -87,12 +91,123 @@ const services = [
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
       </svg>
     ),
+    imageUrl: "/service-saude.png",
     title: "Plano de Saúde",
     subtitle: "Cuidado com quem importa",
     desc: "Acesso à rede médica de qualidade com revisão dos planos atuais — buscando redução de custos ou melhoria na cobertura.",
     bullets: [],
   },
 ];
+
+function ContactForm() {
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%", boxSizing: "border-box",
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(200,168,75,0.2)",
+    borderRadius: 10,
+    padding: "0.875rem 1rem",
+    fontSize: "0.9rem",
+    color: "#fff",
+    outline: "none",
+    fontFamily: "inherit",
+    transition: "border-color 0.2s",
+  };
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json() as { error?: string };
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(data.error ?? "Erro ao enviar. Tente novamente.");
+      }
+    } catch {
+      setError("Erro de conexão. Tente novamente.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  if (submitted) {
+    return (
+      <div style={{
+        background: "rgba(200,168,75,0.07)",
+        border: "1px solid rgba(200,168,75,0.25)",
+        borderRadius: 20,
+        padding: "3rem 2rem",
+        textAlign: "center",
+      }}>
+        <div style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(200,168,75,0.15)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem" }}>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", color: "#fff", marginBottom: "0.75rem" }}>Mensagem enviada!</h3>
+        <p style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.6)", lineHeight: 1.7 }}>
+          Obrigado pelo contato. Fábio Dias Neumann responderá em breve.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+        <input
+          type="text" placeholder="Seu nome *" required
+          value={form.name}
+          onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+          style={inputStyle}
+        />
+        <input
+          type="email" placeholder="Seu e-mail *" required
+          value={form.email}
+          onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+          style={inputStyle}
+        />
+      </div>
+      <input
+        type="tel" placeholder="Telefone / WhatsApp"
+        value={form.phone}
+        onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+        style={inputStyle}
+      />
+      <textarea
+        placeholder="Como posso ajudar? *" required rows={5}
+        value={form.message}
+        onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+        style={{ ...inputStyle, resize: "vertical" }}
+      />
+      {error && (
+        <p style={{ fontSize: "0.85rem", color: "#e07070", margin: 0 }}>{error}</p>
+      )}
+      <button
+        type="submit"
+        disabled={submitting}
+        className="btn-gold"
+        style={{ justifyContent: "center", opacity: submitting ? 0.7 : 1, cursor: submitting ? "not-allowed" : "pointer", border: "none" }}
+      >
+        {submitting ? "Enviando..." : "Enviar Mensagem"}
+      </button>
+      <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.35)", margin: 0, textAlign: "center" }}>
+        Seus dados são usados apenas para responder ao seu contato.
+      </p>
+    </form>
+  );
+}
 
 export default function Home() {
   useReveal();
@@ -109,7 +224,7 @@ export default function Home() {
         borderBottom: "1px solid rgba(200,168,75,0.1)",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 80 }}>
-          <LogoTransparent height={96} />
+          <LogoTransparent height={128} />
           <nav style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
             {[["#sobre", "Sobre"], ["#solucoes", "Soluções"], ["#contato", "Contato"]].map(([href, label]) => (
               <a key={href} href={href} className="nav-link">{label}</a>
@@ -237,7 +352,7 @@ export default function Home() {
               borderRadius: 24,
               padding: "3rem",
             }}>
-              <LogoTransparent height={160} style={{ marginBottom: "2rem" }} />
+              <LogoTransparent height={200} style={{ marginBottom: "2rem" }} />
               <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.25rem", lineHeight: 1.65, color: "rgba(255,255,255,0.85)", fontStyle: "italic" }}>
                 "Nosso propósito é proteger pessoas, famílias e empresas, transformando riscos financeiros em tranquilidade e segurança."
               </p>
@@ -313,30 +428,39 @@ export default function Home() {
               <div
                 key={svc.title}
                 className={`glass-card reveal reveal-delay-${i + 1}`}
-                style={{ borderRadius: 20, padding: "2rem" }}
+                style={{ borderRadius: 20, overflow: "hidden", padding: 0 }}
               >
-                <div className="service-icon">{svc.icon}</div>
-
-                <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "0.4rem" }}>
-                  {svc.subtitle}
+                <div style={{ height: 160, overflow: "hidden", position: "relative" }}>
+                  <img
+                    src={svc.imageUrl}
+                    alt={svc.title}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", filter: "brightness(0.85) contrast(1.05)" }}
+                  />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(13,18,32,0.9) 100%)" }} />
                 </div>
-                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", fontWeight: 600, color: "#fff", marginBottom: "0.875rem", lineHeight: 1.3 }}>
-                  {svc.title}
-                </h3>
-                <div className="gold-line" style={{ marginBottom: "1rem" }} />
-                <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(212,185,106,0.6)", marginBottom: svc.bullets.length ? "1rem" : 0 }}>
-                  {svc.desc}
-                </p>
-                {svc.bullets.length > 0 && (
-                  <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                    {svc.bullets.map((b) => (
-                      <li key={b} className="gold-bullet">
-                        <span className="gold-bullet-dot" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <div style={{ padding: "1.5rem" }}>
+                  <div className="service-icon">{svc.icon}</div>
+                  <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "0.4rem" }}>
+                    {svc.subtitle}
+                  </div>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", fontWeight: 600, color: "#fff", marginBottom: "0.875rem", lineHeight: 1.3 }}>
+                    {svc.title}
+                  </h3>
+                  <div className="gold-line" style={{ marginBottom: "1rem" }} />
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(212,185,106,0.6)", marginBottom: svc.bullets.length ? "1rem" : 0 }}>
+                    {svc.desc}
+                  </p>
+                  {svc.bullets.length > 0 && (
+                    <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                      {svc.bullets.map((b) => (
+                        <li key={b} className="gold-bullet">
+                          <span className="gold-bullet-dot" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -544,59 +668,132 @@ export default function Home() {
           <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
             <div className="section-label" style={{ justifyContent: "center", marginBottom: "1.25rem" }}>Contato</div>
             <h2 className="heading-serif" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)" }}>
-              Onde me <span className="text-gold-gradient">encontrar</span>
+              Fale com o <span className="text-gold-gradient">especialista</span>
             </h2>
+            <p style={{ fontSize: "1rem", color: "rgba(212,185,106,0.55)", maxWidth: 480, margin: "1rem auto 0", lineHeight: 1.7 }}>
+              Preencha o formulário e entraremos em contato em breve. Ou escolha o canal de preferência.
+            </p>
           </div>
 
-          <div className="reveal reveal-delay-1" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem", maxWidth: 600, margin: "0 auto" }}>
-            <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer" className="contact-card">
-              <div style={{ width: 56, height: 56, borderRadius: 16, background: "rgba(200,168,75,0.1)", border: "1px solid rgba(200,168,75,0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="#c8a84b">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-              </div>
-              <div>
-                <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: 4 }}>WhatsApp</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 600, color: "#fff" }}>(11) 99249-0109</div>
-              </div>
-            </a>
+          <div className="reveal reveal-delay-1" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
 
-            <a href="https://instagram.com/famajo_correto" target="_blank" rel="noopener noreferrer" className="contact-card">
-              <div style={{ width: 56, height: 56, borderRadius: 16, background: "rgba(200,168,75,0.1)", border: "1px solid rgba(200,168,75,0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="#c8a84b">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
+            {/* Form */}
+            <ContactForm />
+
+            {/* Contact info */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+              <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer" className="contact-card">
+                <div style={{ width: 56, height: 56, borderRadius: 16, background: "rgba(200,168,75,0.1)", border: "1px solid rgba(200,168,75,0.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#c8a84b">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: 4 }}>WhatsApp</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 600, color: "#fff" }}>(11) 99249-0109</div>
+                </div>
+              </a>
+
+              <a href="https://instagram.com/famajo_correto" target="_blank" rel="noopener noreferrer" className="contact-card">
+                <div style={{ width: 56, height: 56, borderRadius: 16, background: "rgba(200,168,75,0.1)", border: "1px solid rgba(200,168,75,0.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="#c8a84b">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: 4 }}>Instagram</div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 600, color: "#fff" }}>@famajo_correto</div>
+                </div>
+              </a>
+
+              <div className="glass-card" style={{ borderRadius: 16, padding: "1.5rem" }}>
+                <div style={{ fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(200,168,75,0.5)", marginBottom: "0.75rem" }}>Atendimento</div>
+                <p style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.7)", lineHeight: 1.7 }}>
+                  Fábio Dias Neumann responde pessoalmente a cada contato. Especialista com 15 anos de experiência em proteção patrimonial e planejamento financeiro.
+                </p>
               </div>
-              <div>
-                <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: 4 }}>Instagram</div>
-                <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 600, color: "#fff" }}>@famajo_correto</div>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer style={{ borderTop: "1px solid rgba(200,168,75,0.1)", padding: "2.5rem 2rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-            <LogoTransparent height={76} />
-            <div style={{ width: 1, height: 32, background: "rgba(200,168,75,0.2)" }} />
-            <span style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.4)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Famajo Corretora</span>
+      <footer style={{ borderTop: "1px solid rgba(200,168,75,0.1)", background: "rgba(8,12,22,0.98)", paddingTop: "4rem" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem" }}>
+
+          {/* Top grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "4rem", paddingBottom: "3rem" }}>
+
+            {/* Col 1: Brand */}
+            <div>
+              <LogoTransparent height={108} style={{ marginBottom: "1.25rem" }} />
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.5)", maxWidth: 320, marginBottom: "1.5rem" }}>
+                Soluções estratégicas em proteção patrimonial, planejamento financeiro e gestão de riscos para pessoas, famílias e empresas.
+              </p>
+              <div style={{ display: "flex", gap: "0.75rem" }}>
+                <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer"
+                  style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(200,168,75,0.08)", border: "1px solid rgba(200,168,75,0.2)", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none", transition: "background 0.2s" }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#c8a84b">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </a>
+                <a href="https://instagram.com/famajo_correto" target="_blank" rel="noopener noreferrer"
+                  style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(200,168,75,0.08)", border: "1px solid rgba(200,168,75,0.2)", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#c8a84b">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Col 2: Navigation */}
+            <div>
+              <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "1.25rem" }}>Navegação</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                {[["#sobre", "Sobre Nós"], ["#solucoes", "Soluções"], ["#beneficios", "Benefícios"], ["#contato", "Contato"]].map(([href, label]) => (
+                  <a key={href} href={href} style={{ fontSize: "0.875rem", color: "rgba(212,185,106,0.55)", textDecoration: "none", transition: "color 0.2s" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#c8a84b"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(212,185,106,0.55)"; }}>
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Col 3: Contact */}
+            <div>
+              <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "1.25rem" }}>Contato</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                <div>
+                  <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>WhatsApp</div>
+                  <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer"
+                    style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)", textDecoration: "none" }}>
+                    (11) 99249-0109
+                  </a>
+                </div>
+                <div>
+                  <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>Instagram</div>
+                  <a href="https://instagram.com/famajo_correto" target="_blank" rel="noopener noreferrer"
+                    style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)", textDecoration: "none" }}>
+                    @famajo_correto
+                  </a>
+                </div>
+                <div>
+                  <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>Especialista</div>
+                  <div style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)" }}>Fábio Dias Neumann</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.3)" }}>
-            © {new Date().getFullYear()} Famajo Corretora — Fábio Dias Neumann. Todos os direitos reservados.
-          </p>
-          <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
-            <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.8rem", color: "rgba(212,185,106,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = "#c8a84b")}
-              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = "rgba(212,185,106,0.5)")}
-            >(11) 99249-0109</a>
-            <div style={{ width: 1, height: 16, background: "rgba(200,168,75,0.2)" }} />
-            <a href="https://instagram.com/famajo_correto" target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.8rem", color: "rgba(212,185,106,0.5)", textDecoration: "none", transition: "color 0.2s" }}
-              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = "#c8a84b")}
-              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = "rgba(212,185,106,0.5)")}
-            >@famajo_correto</a>
+
+          {/* Bottom bar */}
+          <div style={{ borderTop: "1px solid rgba(200,168,75,0.08)", padding: "1.5rem 0", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+            <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.25)" }}>
+              © {new Date().getFullYear()} Famajo Corretora · Fábio Dias Neumann. Todos os direitos reservados.
+            </p>
+            <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.2)" }}>
+              SUSEP · Corretora de Seguros Autorizada
+            </p>
           </div>
         </div>
       </footer>
