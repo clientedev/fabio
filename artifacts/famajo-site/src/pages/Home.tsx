@@ -33,6 +33,7 @@ function useReveal() {
 
 const services = [
   {
+    slug: "seguro-de-vida",
     imageUrl: "/service-vida.png",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -45,6 +46,7 @@ const services = [
     bullets: [],
   },
   {
+    slug: "protecao-laboral",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="7" width="20" height="14" rx="2"/>
@@ -60,6 +62,7 @@ const services = [
     bullets: ["Diagnóstico de Doenças Graves", "Invalidez por doença ou acidente", "Diárias de internação hospitalar", "Afastamento temporário (DIT)", "Risco cirúrgico e quebra de ossos"],
   },
   {
+    slug: "sucessao-empresarial",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -73,6 +76,7 @@ const services = [
     bullets: ["Compra de cotas entre sócios", "Continuidade da empresa", "Pagamento de impostos e inventário", "Honorários jurídicos"],
   },
   {
+    slug: "consorcios",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/>
@@ -87,6 +91,7 @@ const services = [
     bullets: ["Imóveis", "Veículos e motos", "Caminhões", "Serviços e consórcio empresarial"],
   },
   {
+    slug: "plano-de-saude",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
@@ -426,10 +431,13 @@ export default function Home() {
           {/* Grid */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
             {services.map((svc, i) => (
-              <div
+              <Link
                 key={svc.title}
+                href={`/solucoes/${svc.slug}`}
                 className={`glass-card reveal reveal-delay-${i + 1}`}
-                style={{ borderRadius: 20, overflow: "hidden", padding: 0 }}
+                style={{ borderRadius: 20, overflow: "hidden", padding: 0, display: "block", textDecoration: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(200,168,75,0.15)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = ""; }}
               >
                 <div style={{ height: 160, overflow: "hidden", position: "relative" }}>
                   <img
@@ -462,7 +470,7 @@ export default function Home() {
                     </ul>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -488,7 +496,7 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem", marginBottom: "1.5rem" }}>
 
             {/* Card 1 — Fora do Inventário */}
-            <div className="glass-card reveal reveal-delay-1" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <Link href="/beneficios/fora-do-inventario" className="glass-card reveal reveal-delay-1" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem", textDecoration: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(200,168,75,0.15)"; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = ""; }}>
               <div className="service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -509,10 +517,10 @@ export default function Home() {
               <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
                 O seguro de vida não integra o espólio nem se submete ao inventário. O capital é pago de forma direta e ágil aos beneficiários, preservando o patrimônio e evitando a descapitalização da família em momentos críticos.
               </p>
-            </div>
+            </Link>
 
             {/* Card 2 — Isenção Fiscal */}
-            <div className="glass-card reveal reveal-delay-2" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <Link href="/beneficios/isencao-fiscal" className="glass-card reveal reveal-delay-2" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem", textDecoration: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(200,168,75,0.15)"; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = ""; }}>
               <div className="service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="3" width="18" height="18" rx="3"/>
@@ -532,10 +540,10 @@ export default function Home() {
               <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
                 O capital segurado pago por falecimento é totalmente isento de Imposto de Renda para o beneficiário, conforme o Art. 6º da Lei 7.713. O valor chega íntegro — sem tributação e sem perdas para o Estado.
               </p>
-            </div>
+            </Link>
 
             {/* Card 3 — Beneficiários */}
-            <div className="glass-card reveal reveal-delay-3" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <Link href="/beneficios/beneficiarios" className="glass-card reveal reveal-delay-3" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem", textDecoration: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(200,168,75,0.15)"; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = ""; }}>
               <div className="service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -556,10 +564,10 @@ export default function Home() {
               <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
                 Você tem total autonomia para indicar qualquer pessoa como beneficiário — familiar ou não —, sem restrições legais. A indicação pode ser formal, contratual ou alterada a qualquer momento, com flexibilidade total.
               </p>
-            </div>
+            </Link>
 
             {/* Card 4 — Impenhorabilidade */}
-            <div className="glass-card reveal reveal-delay-4" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <Link href="/beneficios/impenhorabilidade" className="glass-card reveal reveal-delay-4" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem", textDecoration: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(200,168,75,0.15)"; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = ""; }}>
               <div className="service-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
@@ -578,7 +586,7 @@ export default function Home() {
               <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
                 Amparado pelo Código Civil e pelo CPC, o capital do seguro de vida é protegido contra dívidas e penhores. Credores não podem acessar esse valor — garantindo que chegue integralmente aos beneficiários.
               </p>
-            </div>
+            </Link>
           </div>
 
           {/* Callout card — full width */}
