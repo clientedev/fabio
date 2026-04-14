@@ -1,17 +1,11 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
-  "services": {
-    "famajo-site": {
-      "name": "famajo-site",
-      "sourcePath": "artifacts/famajo-site",
-      "numReplicas": 1,
-      "build": {
-        "builder": "NIXPACKS"
-      },
-      "env": {
-        "BASE_PATH": "/",
-        "NIXPACKS_PNPM_INSTALL_ARGS": "--no-frozen-lockfile"
-      }
-    }
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "pnpm install --no-frozen-lockfile && BASE_PATH=/ pnpm --filter @workspace/famajo-site run build"
+  },
+  "deploy": {
+    "startCommand": "BASE_PATH=/ pnpm --filter @workspace/famajo-site run serve",
+    "restartPolicyType": "ON_FAILURE"
   }
 }
