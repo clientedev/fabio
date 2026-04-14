@@ -36,7 +36,7 @@ app.use("/api", router);
 const staticPath = process.env["STATIC_PATH"];
 if (staticPath && existsSync(staticPath)) {
   app.use(express.static(staticPath));
-  app.get("*", (_req, res) => {
+  app.get("/{*path}", (_req, res) => {
     res.sendFile(join(staticPath, "index.html"));
   });
   logger.info({ staticPath }, "Serving static files");

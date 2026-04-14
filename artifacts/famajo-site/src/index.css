@@ -224,11 +224,9 @@ body {
 
 /* ─── Hero mesh gradient bg ─── */
 .hero-bg {
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(200,168,75,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(17, 34, 68, 0.8) 0%, transparent 60%),
-    linear-gradient(160deg, #0d1220 0%, #101828 50%, #0d1220 100%);
+  background: #0a0f1c;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* ─── Subtle bg noise texture overlay ─── */

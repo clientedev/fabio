@@ -216,9 +216,22 @@ function ContactForm() {
   );
 }
 
+const HERO_SLIDES = [
+  "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=85&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=85&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1920&q=85&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=85&auto=format&fit=crop",
+];
+
 export default function Home() {
   useReveal();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setHeroSlide(s => (s + 1) % HERO_SLIDES.length), 6000);
+    return () => clearInterval(id);
+  }, []);
 
   const navLinks: [string, string][] = [["#sobre", "Sobre"], ["#solucoes", "Soluções"], ["#contato", "Contato"]];
 
@@ -267,13 +280,34 @@ export default function Home() {
 
       {/* ─── HERO ─── */}
       <section className="hero-bg" style={{ position: "relative", display: "flex", alignItems: "center", paddingTop: 72, minHeight: "100vh" }}>
-        <div className="noise-overlay" />
+
+        {/* Background photo slideshow */}
+        {HERO_SLIDES.map((src, i) => (
+          <div
+            key={src}
+            style={{
+              position: "absolute", inset: 0, zIndex: 0,
+              backgroundImage: `url(${src})`,
+              backgroundSize: "cover", backgroundPosition: "center",
+              opacity: i === heroSlide ? 1 : 0,
+              transition: "opacity 1.8s ease-in-out",
+            }}
+          />
+        ))}
+
+        {/* Dark navy film over photos */}
+        <div style={{
+          position: "absolute", inset: 0, zIndex: 1,
+          background: "linear-gradient(135deg, rgba(10,15,28,0.88) 0%, rgba(13,18,32,0.82) 50%, rgba(10,15,28,0.75) 100%)",
+        }} />
+
+        <div className="noise-overlay" style={{ zIndex: 2 }} />
 
         {/* Decorative orbs */}
-        <div style={{ position: "absolute", top: "15%", right: "5%", width: 420, height: 420, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,168,75,0.07) 0%, transparent 70%)", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "10%", left: "-5%", width: 320, height: 320, borderRadius: "50%", background: "radial-gradient(circle, rgba(17,50,100,0.4) 0%, transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "15%", right: "5%", width: 420, height: 420, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,168,75,0.07) 0%, transparent 70%)", pointerEvents: "none", zIndex: 3 }} />
+        <div style={{ position: "absolute", bottom: "10%", left: "-5%", width: 320, height: 320, borderRadius: "50%", background: "radial-gradient(circle, rgba(17,50,100,0.4) 0%, transparent 70%)", pointerEvents: "none", zIndex: 3 }} />
 
-        <div className="layout-grid-hero" style={{ maxWidth: 1200, margin: "0 auto", padding: "5rem 1.25rem" }}>
+        <div className="layout-grid-hero" style={{ maxWidth: 1200, margin: "0 auto", padding: "5rem 1.25rem", position: "relative", zIndex: 4 }}>
 
           {/* Left */}
           <div>
