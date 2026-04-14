@@ -343,6 +343,153 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── BENEFÍCIOS DO SEGURO DE VIDA ─── */}
+      <section id="beneficios" style={{ padding: "8rem 2rem", background: "linear-gradient(180deg, #0d1220 0%, #0a0f1c 100%)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+
+          {/* Header */}
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "5rem" }}>
+            <div className="section-label" style={{ justifyContent: "center", marginBottom: "1.25rem" }}>Proteção além do óbvio</div>
+            <h2 className="heading-serif" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)", marginBottom: "1rem" }}>
+              Benefícios do{" "}
+              <span className="text-gold-gradient">Seguro de Vida</span>
+            </h2>
+            <p style={{ fontSize: "1rem", color: "rgba(212,185,106,0.55)", maxWidth: 540, margin: "0 auto", lineHeight: 1.7 }}>
+              Vantagens jurídicas, fiscais e patrimoniais que fazem do seguro de vida uma das ferramentas mais poderosas de planejamento financeiro.
+            </p>
+          </div>
+
+          {/* 2×2 Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem", marginBottom: "1.5rem" }}>
+
+            {/* Card 1 — Fora do Inventário */}
+            <div className="glass-card reveal reveal-delay-1" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div className="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <path d="M9 22V12h6v10"/>
+                  <line x1="3" y1="3" x2="6" y2="6"/>
+                  <line x1="21" y1="3" x2="18" y2="6"/>
+                </svg>
+              </div>
+              <div>
+                <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "0.4rem" }}>
+                  Planejamento patrimonial
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.15rem", fontWeight: 600, color: "#fff", marginBottom: "0.875rem", lineHeight: 1.3 }}>
+                  Fora do Inventário
+                </h3>
+              </div>
+              <div className="gold-line" />
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+                O seguro de vida não integra o espólio nem se submete ao inventário. O capital é pago de forma direta e ágil aos beneficiários, preservando o patrimônio e evitando a descapitalização da família em momentos críticos.
+              </p>
+            </div>
+
+            {/* Card 2 — Isenção Fiscal */}
+            <div className="glass-card reveal reveal-delay-2" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div className="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="3"/>
+                  <path d="M9 12l2 2 4-4"/>
+                  <line x1="9" y1="7" x2="15" y2="7"/>
+                </svg>
+              </div>
+              <div>
+                <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "0.4rem" }}>
+                  Vantagem tributária
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.15rem", fontWeight: 600, color: "#fff", marginBottom: "0.875rem", lineHeight: 1.3 }}>
+                  Isenção Fiscal
+                </h3>
+              </div>
+              <div className="gold-line" />
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+                O capital segurado pago por falecimento é totalmente isento de Imposto de Renda para o beneficiário, conforme o Art. 6º da Lei 7.713. O valor chega íntegro — sem tributação e sem perdas para o Estado.
+              </p>
+            </div>
+
+            {/* Card 3 — Beneficiários */}
+            <div className="glass-card reveal reveal-delay-3" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div className="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div>
+                <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "0.4rem" }}>
+                  Liberdade de escolha
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.15rem", fontWeight: 600, color: "#fff", marginBottom: "0.875rem", lineHeight: 1.3 }}>
+                  Beneficiários Livres
+                </h3>
+              </div>
+              <div className="gold-line" />
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+                Você tem total autonomia para indicar qualquer pessoa como beneficiário — familiar ou não —, sem restrições legais. A indicação pode ser formal, contratual ou alterada a qualquer momento, com flexibilidade total.
+              </p>
+            </div>
+
+            {/* Card 4 — Impenhorabilidade */}
+            <div className="glass-card reveal reveal-delay-4" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <div className="service-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <div>
+                <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "0.4rem" }}>
+                  Proteção jurídica
+                </div>
+                <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.15rem", fontWeight: 600, color: "#fff", marginBottom: "0.875rem", lineHeight: 1.3 }}>
+                  Impenhorabilidade
+                </h3>
+              </div>
+              <div className="gold-line" />
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+                Amparado pelo Código Civil e pelo CPC, o capital do seguro de vida é protegido contra dívidas e penhores. Credores não podem acessar esse valor — garantindo que chegue integralmente aos beneficiários.
+              </p>
+            </div>
+          </div>
+
+          {/* Callout card — full width */}
+          <div className="reveal reveal-delay-5" style={{
+            borderRadius: 20,
+            padding: "2.25rem 2.5rem",
+            background: "linear-gradient(135deg, rgba(200,168,75,0.1) 0%, rgba(200,168,75,0.04) 100%)",
+            border: "1px solid rgba(200,168,75,0.28)",
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "1.5rem",
+            position: "relative",
+            overflow: "hidden",
+          }}>
+            <div style={{ position: "absolute", right: -40, top: -40, width: 200, height: 200, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,168,75,0.07), transparent 70%)", pointerEvents: "none" }} />
+            <div style={{ flexShrink: 0, width: 48, height: 48, borderRadius: 14, background: "rgba(200,168,75,0.12)", border: "1px solid rgba(200,168,75,0.3)", display: "flex", alignItems: "center", justifyContent: "center", marginTop: 2 }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div>
+              <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.5)", marginBottom: "0.5rem" }}>
+                Importante saber
+              </div>
+              <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: "rgba(212,185,106,0.8)", maxWidth: 860 }}>
+                <strong style={{ color: "#e8c96a", fontWeight: 600 }}>O seguro de vida não compõe o espólio e não se enquadra como herança.</strong>{" "}
+                Isso garante que o capital seja pago diretamente aos beneficiários, fora do inventário e da Tabela do ITCMD, independentemente de partilha de bens — assegurando liquidez imediata para quem você ama.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* ─── CTA BANNER ─── */}
       <section style={{ padding: "0 2rem 8rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
