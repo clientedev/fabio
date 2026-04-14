@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
+
 import logoImg from "@assets/image_1776108637978.png";
 import fabioImg from "@assets/image_1776107063260.png";
 
@@ -217,6 +218,9 @@ function ContactForm() {
 
 export default function Home() {
   useReveal();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks: [string, string][] = [["#sobre", "Sobre"], ["#solucoes", "Soluções"], ["#contato", "Contato"]];
 
   return (
     <div style={{ backgroundColor: "#0d1220", fontFamily: "'Inter', sans-serif", overflowX: "hidden" }}>
@@ -229,18 +233,37 @@ export default function Home() {
         WebkitBackdropFilter: "blur(12px)",
         borderBottom: "1px solid rgba(200,168,75,0.1)",
       }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 80 }}>
-          <LogoTransparent height={128} />
-          <nav style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
-            {[["#sobre", "Sobre"], ["#solucoes", "Soluções"], ["#contato", "Contato"]].map(([href, label]) => (
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 80 }}>
+          <LogoTransparent height={108} />
+          <nav className="nav-links-desktop">
+            {navLinks.map(([href, label]) => (
               <a key={href} href={href} className="nav-link">{label}</a>
             ))}
           </nav>
-          <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ padding: "0.625rem 1.5rem", borderRadius: 8 }}>
+          <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer" className="btn-gold nav-cta-desktop" style={{ padding: "0.625rem 1.5rem", borderRadius: 8 }}>
             Falar Agora
           </a>
+          <button className="nav-hamburger-btn" onClick={() => setMenuOpen(o => !o)} aria-label="Abrir menu">
+            {menuOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="2" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="2" strokeLinecap="round">
+                <line x1="3" y1="8" x2="21" y2="8" /><line x1="3" y1="16" x2="21" y2="16" />
+              </svg>
+            )}
+          </button>
         </div>
       </header>
+      <div className={`mobile-nav-overlay${menuOpen ? " open" : ""}`}>
+        {navLinks.map(([href, label]) => (
+          <a key={href} href={href} className="mobile-nav-link" onClick={() => setMenuOpen(false)}>{label}</a>
+        ))}
+        <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ marginTop: "1.25rem", justifyContent: "center" }} onClick={() => setMenuOpen(false)}>
+          Falar Agora
+        </a>
+      </div>
 
       {/* ─── HERO ─── */}
       <section className="hero-bg" style={{ position: "relative", display: "flex", alignItems: "center", paddingTop: 72, minHeight: "100vh" }}>
@@ -250,7 +273,7 @@ export default function Home() {
         <div style={{ position: "absolute", top: "15%", right: "5%", width: 420, height: 420, borderRadius: "50%", background: "radial-gradient(circle, rgba(200,168,75,0.07) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", bottom: "10%", left: "-5%", width: 320, height: 320, borderRadius: "50%", background: "radial-gradient(circle, rgba(17,50,100,0.4) 0%, transparent 70%)", pointerEvents: "none" }} />
 
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "5rem 2rem", width: "100%", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+        <div className="layout-grid-hero" style={{ maxWidth: 1200, margin: "0 auto", padding: "5rem 1.25rem" }}>
 
           {/* Left */}
           <div>
@@ -278,7 +301,7 @@ export default function Home() {
             </div>
 
             {/* Stats row */}
-            <div className="reveal reveal-delay-4" style={{ display: "flex", gap: "2rem", marginTop: "3.5rem", paddingTop: "2.5rem", borderTop: "1px solid rgba(200,168,75,0.12)" }}>
+            <div className="reveal reveal-delay-4 hero-stats-row" style={{ display: "flex", gap: "2rem", marginTop: "3.5rem", paddingTop: "2.5rem", borderTop: "1px solid rgba(200,168,75,0.12)" }}>
               {[["15+", "Anos de Mercado"], ["5", "Áreas de Atuação"], ["100%", "Dedicação ao Cliente"]].map(([num, label]) => (
                 <div key={label}>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.75rem", fontWeight: 700, color: "#c8a84b", lineHeight: 1 }}>{num}</div>
@@ -289,7 +312,7 @@ export default function Home() {
           </div>
 
           {/* Right — Fábio photo */}
-          <div className="reveal reveal-delay-2" style={{ display: "flex", justifyContent: "flex-end", position: "relative" }}>
+          <div className="hero-photo-col reveal reveal-delay-2" style={{ display: "flex", justifyContent: "flex-end", position: "relative" }}>
             {/* Decorative frame */}
             <div style={{
               position: "absolute", top: 20, right: 20, bottom: -20, left: 20,
@@ -347,8 +370,8 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT ─── */}
-      <section id="sobre" style={{ background: "linear-gradient(180deg, #0d1220 0%, #101828 100%)", padding: "8rem 2rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "center" }}>
+      <section id="sobre" style={{ background: "linear-gradient(180deg, #0d1220 0%, #101828 100%)", padding: "8rem 1.25rem" }}>
+        <div className="layout-grid-2col" style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Left visual: logo + quote card */}
           <div className="reveal" style={{ position: "relative" }}>
@@ -413,7 +436,7 @@ export default function Home() {
       </div>
 
       {/* ─── SERVICES ─── */}
-      <section id="solucoes" style={{ padding: "8rem 2rem", background: "linear-gradient(180deg, #101828 0%, #0d1220 100%)" }}>
+      <section id="solucoes" style={{ padding: "8rem 1.25rem", background: "linear-gradient(180deg, #101828 0%, #0d1220 100%)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Header */}
@@ -429,7 +452,7 @@ export default function Home() {
           </div>
 
           {/* Grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem" }}>
+          <div className="layout-grid-3col">
             {services.map((svc, i) => (
               <Link
                 key={svc.title}
@@ -477,7 +500,7 @@ export default function Home() {
       </section>
 
       {/* ─── BENEFÍCIOS DO SEGURO DE VIDA ─── */}
-      <section id="beneficios" style={{ padding: "8rem 2rem", background: "linear-gradient(180deg, #0d1220 0%, #0a0f1c 100%)" }}>
+      <section id="beneficios" style={{ padding: "8rem 1.25rem", background: "linear-gradient(180deg, #0d1220 0%, #0a0f1c 100%)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Header */}
@@ -493,7 +516,7 @@ export default function Home() {
           </div>
 
           {/* 2×2 Cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem", marginBottom: "1.5rem" }}>
+          <div className="layout-grid-benefits">
 
             {/* Card 1 — Fora do Inventário */}
             <Link href="/beneficios/fora-do-inventario" className="glass-card reveal reveal-delay-1" style={{ borderRadius: 20, padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem", textDecoration: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 60px rgba(200,168,75,0.15)"; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = ""; }}>
@@ -624,7 +647,7 @@ export default function Home() {
       </section>
 
       {/* ─── CTA BANNER ─── */}
-      <section style={{ padding: "0 2rem 8rem" }}>
+      <section style={{ padding: "0 1.25rem 8rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div
             className="reveal"
@@ -672,7 +695,7 @@ export default function Home() {
       </section>
 
       {/* ─── CONTACT ─── */}
-      <section id="contato" style={{ padding: "0 2rem 8rem", background: "transparent" }}>
+      <section id="contato" style={{ padding: "0 1.25rem 8rem", background: "transparent" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
             <div className="section-label" style={{ justifyContent: "center", marginBottom: "1.25rem" }}>Contato</div>
@@ -684,7 +707,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="reveal reveal-delay-1" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }}>
+          <div className="layout-grid-2col-start reveal reveal-delay-1">
 
             {/* Form */}
             <ContactForm />
@@ -728,10 +751,10 @@ export default function Home() {
 
       {/* ─── FOOTER ─── */}
       <footer style={{ borderTop: "1px solid rgba(200,168,75,0.1)", background: "rgba(8,12,22,0.98)", paddingTop: "4rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.25rem" }}>
 
           {/* Top grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "4rem", paddingBottom: "3rem" }}>
+          <div className="layout-grid-footer">
 
             {/* Col 1: Brand */}
             <div>

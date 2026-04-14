@@ -16,8 +16,8 @@ const IG_PATH = "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919
 export function SiteFooter() {
   return (
     <footer style={{ borderTop: "1px solid rgba(200,168,75,0.1)", background: "rgba(8,12,22,0.98)", paddingTop: "4rem" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 2rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "4rem", paddingBottom: "3rem" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.25rem" }}>
+        <div className="layout-grid-footer">
           <div>
             <Logo height={108} />
             <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.5)", maxWidth: 320, margin: "1.25rem 0 1.5rem" }}>
