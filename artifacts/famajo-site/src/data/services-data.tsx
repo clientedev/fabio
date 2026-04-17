@@ -266,7 +266,7 @@ export const servicesData: Record<string, ServiceData> = {
   },
   "seguro-viagem": {
     slug: "seguro-viagem",
-    imageUrl: "/service-viagem.png",
+    imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109c0f?auto=format&fit=crop&q=80&w=2070",
     category: "Proteção em Movimento",
     title: "Seguro Viagem",
     tagline: "Explore o mundo com a segurança de estar sempre protegido",
