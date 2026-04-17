@@ -113,7 +113,7 @@ const services = [
         <path d="M12 21.85V19"/>
       </svg>
     ),
-    imageUrl: "https://images.unsplash.com/photo-1436491865332-7a61a109c0f?auto=format&fit=crop&q=80&w=2070",
+    imageUrl: "/service-viagem.png",
     title: "Seguro Viagem",
     subtitle: "Tranquilidade em qualquer destino",
     desc: "Proteção completa para suas viagens nacionais e internacionais, garantindo assistência médica, cobertura para extravio de bagagem e suporte 24h em qualquer lugar do mundo.",
