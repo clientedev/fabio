@@ -264,4 +264,52 @@ export const servicesData: Record<string, ServiceData> = {
     who: ["Quem paga caro por plano inadequado", "Famílias com perfil de saúde específico", "Empresas que querem oferecer benefício de qualidade", "Quem está migrando de plano coletivo", "Autônomos e profissionais liberais"],
     ctaText: "Revisar Meu Plano de Saúde",
   },
+  "seguro-viagem": {
+    slug: "seguro-viagem",
+    imageUrl: "/service-viagem.png",
+    category: "Proteção em Movimento",
+    title: "Seguro Viagem",
+    tagline: "Explore o mundo com a segurança de estar sempre protegido",
+    intro: "O Seguro Viagem é essencial para quem busca tranquilidade fora de casa. Mais do que uma exigência consular em muitos países, é a garantia de que, diante de imprevistos de saúde, acidentes ou problemas com bagagem, você terá todo o suporte necessário sem custos inesperados e em seu próprio idioma.",
+    stats: [
+      { value: "24h", label: "Suporte Global" },
+      { value: "100+", label: "Países Cobertos" },
+      { value: "0", label: "Preocupações" },
+    ],
+    features: [
+      {
+        icon: "M21 12c0 1.66-4 3-9 3s-9-1.34-9-3c0-1.66 4-3 9-3s9 1.34 9 3zM3 12v6c0 1.66 4 3 9 3s9-1.34 9-3v-6",
+        title: "Assistência Médica e Odontológica",
+        desc: "Acesso às melhores redes hospitalares do mundo para consultas, exames e cirurgias de emergência, sem burocracia.",
+      },
+      {
+        icon: "M20 7h-3V5c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM9 5h6v2H9V5zm11 15H4V9h3c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2h3v11z",
+        title: "Seguro de Bagagem",
+        desc: "Indenização em caso de extravio, dano ou atraso na entrega das suas malas, para que você não fique na mão.",
+      },
+      {
+        icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+        title: "Cancelamento e Interrupção",
+        desc: "Reembolso de despesas não utilizadas em caso de necessidade de cancelar ou interromper a viagem por motivos justificados.",
+      },
+      {
+        icon: "M7 16l-4-4m0 0l4-4m-4 4h18",
+        title: "Traslado Médico e Repatriação",
+        desc: "Garante o transporte seguro de volta ao seu país de origem ou para um centro médico adequado em casos graves.",
+      },
+      {
+        icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+        title: "Suporte Jurídico e Financeiro",
+        desc: "Assistência em caso de perda de documentos, necessidade de fiança judicial ou adiantamento de fundos no exterior.",
+      },
+    ],
+    steps: [
+      { num: "01", title: "Definição do Roteiro", desc: "Analisamos seu destino, datas e o perfil dos viajantes para encontrar a melhor cobertura." },
+      { num: "02", title: "Escolha do Plano", desc: "Dimensionamos a cobertura conforme as exigências consulares e suas necessidades pessoais." },
+      { num: "03", title: "Emissão Instantânea", desc: "Após a aprovação, o voucher é enviado diretamente para seu e-mail de forma rápida." },
+      { num: "04", title: "Suporte na Viagem", desc: "Você terá canais de atendimento 24h em português sempre à mão para qualquer imprevisto." },
+    ],
+    who: ["Viajantes internacionais e nacionais", "Intercambistas e estudantes", "Executivos em viagens de negócios", "Famílias em férias", "Aventureiros e esportistas"],
+    ctaText: "Cote Meu Seguro Viagem",
+  },
 };

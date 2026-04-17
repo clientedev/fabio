@@ -104,6 +104,21 @@ const services = [
     desc: "Acesso à rede médica de qualidade com revisão dos planos atuais — buscando redução de custos ou melhoria na cobertura.",
     bullets: [],
   },
+  {
+    slug: "seguro-viagem",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 10v6M2 10l10-8 10 8M12 22V7M12 22H2M12 22h10"/>
+        <path d="M20 21.85V13a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v8.85"/>
+        <path d="M12 21.85V19"/>
+      </svg>
+    ),
+    imageUrl: "/service-viagem.png",
+    title: "Seguro Viagem",
+    subtitle: "Tranquilidade em qualquer destino",
+    desc: "Proteção completa para suas viagens nacionais e internacionais, garantindo assistência médica, cobertura para extravio de bagagem e suporte 24h em qualquer lugar do mundo.",
+    bullets: ["Assistência Médica Internacional", "Extravio de Bagagem", "Cancelamento de Viagem", "Suporte 24h em Português"],
+  },
 ];
 
 function ContactForm() {
