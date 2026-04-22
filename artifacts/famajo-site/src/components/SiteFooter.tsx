@@ -24,7 +24,7 @@ export function SiteFooter() {
               Soluções estratégicas em proteção patrimonial, planejamento financeiro e gestão de riscos para pessoas, famílias e empresas.
             </p>
             <div style={{ display: "flex", gap: "0.75rem" }}>
-              {[["https://wa.me/5511992490109", WA_PATH], ["https://instagram.com/famajo_correto", IG_PATH]].map(([href, path]) => (
+              {[["https://wa.me/5511992490109", WA_PATH], ["https://instagram.com/famajo_corretora", IG_PATH]].map(([href, path]) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(200,168,75,0.08)", border: "1px solid rgba(200,168,75,0.2)", display: "flex", alignItems: "center", justifyContent: "center", textDecoration: "none" }}>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="#c8a84b"><path d={path} /></svg>
@@ -49,7 +49,7 @@ export function SiteFooter() {
           <div>
             <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "1.25rem" }}>Contato</div>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              {[["WhatsApp", "https://wa.me/5511992490109", "(11) 99249-0109"], ["Instagram", "https://instagram.com/famajo_correto", "@famajo_correto"]].map(([label, href, text]) => (
+              {[["WhatsApp", "https://wa.me/5511992490109", "(11) 99249-0109"], ["Instagram", "https://instagram.com/famajo_corretora", "@famajo_corretora"]].map(([label, href, text]) => (
                 <div key={label}>
                   <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>{label}</div>
                   <a href={href} target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)", textDecoration: "none" }}>{text}</a>

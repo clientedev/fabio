@@ -54,9 +54,9 @@
   --gold: #c8a84b;
   --gold-light: #e8c96a;
   --gold-muted: rgba(200, 168, 75, 0.18);
-  --navy: #1a2440;
-  --navy-mid: #202c4d;
-  --navy-card: #243056;
+  --navy: #2a3760;
+  --navy-mid: #324070;
+  --navy-card: #3a4a7d;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -107,7 +107,7 @@ body {
   text-transform: uppercase;
   background: linear-gradient(135deg, #c8a84b 0%, #e8c96a 50%, #c8a84b 100%);
   background-size: 200% 200%;
-  color: #1a2440;
+  color: #2a3760;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -224,7 +224,7 @@ body {
 
 /* ─── Hero mesh gradient bg ─── */
 .hero-bg {
-  background: #162038;
+  background: #243358;
   min-height: 100vh;
   overflow: hidden;
 }
