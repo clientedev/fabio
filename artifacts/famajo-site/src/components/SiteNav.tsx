@@ -24,7 +24,7 @@ export function SiteNav() {
     <>
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: "#0a1838",
+        background: "#03081a",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
         borderBottom: "1px solid rgba(200,168,75,0.1)",
