@@ -256,10 +256,11 @@ export default function Home() {
       {/* ─── NAVBAR ─── */}
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: "rgba(42,55,96,0.96)",
+        background: "#0E0E55",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        borderBottom: "1px solid rgba(200,168,75,0.1)",
+        borderBottom: "3px solid #c8a84b",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.7)",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 80 }}>
           <LogoTransparent height={108} />
