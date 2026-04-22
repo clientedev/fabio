@@ -256,7 +256,7 @@ export default function Home() {
       {/* ─── NAVBAR ─── */}
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: "#0E0E55",
+        background: "#15093B",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
         borderBottom: "3px solid #c8a84b",
