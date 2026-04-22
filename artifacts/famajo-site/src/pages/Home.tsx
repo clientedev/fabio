@@ -178,7 +178,7 @@ function ContactForm() {
           </svg>
         </div>
         <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", color: "#fff", marginBottom: "0.75rem" }}>Mensagem enviada!</h3>
-        <p style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.6)", lineHeight: 1.7 }}>
+        <p style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.78)", lineHeight: 1.7 }}>
           Obrigado pelo contato. Fábio Dias Neumann responderá em breve.
         </p>
       </div>
@@ -224,7 +224,7 @@ function ContactForm() {
       >
         {submitting ? "Enviando..." : "Enviar Mensagem"}
       </button>
-      <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.35)", margin: 0, textAlign: "center" }}>
+      <p style={{ fontSize: "0.75rem", color: "rgba(232,205,122,0.53)", margin: 0, textAlign: "center" }}>
         Seus dados são usados apenas para responder ao seu contato.
       </p>
     </form>
@@ -331,7 +331,7 @@ export default function Home() {
               <em className="text-gold-gradient" style={{ fontStyle: "italic" }}>além do seguro</em>
             </h1>
 
-            <p className="reveal reveal-delay-2" style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "rgba(212,185,106,0.62)", marginBottom: "2.5rem", maxWidth: 480 }}>
+            <p className="reveal reveal-delay-2" style={{ fontSize: "1.0625rem", lineHeight: 1.75, color: "rgba(232,205,122,0.8)", marginBottom: "2.5rem", maxWidth: 480 }}>
               Soluções estratégicas em proteção patrimonial, planejamento financeiro e gestão de riscos — para que sua família, sua renda e seu negócio estejam preparados para qualquer cenário.
             </p>
 
@@ -350,7 +350,7 @@ export default function Home() {
               {[["15+", "Anos de Mercado"], ["5", "Áreas de Atuação"], ["100%", "Dedicação ao Cliente"]].map(([num, label]) => (
                 <div key={label}>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.75rem", fontWeight: 700, color: "#c8a84b", lineHeight: 1 }}>{num}</div>
-                  <div style={{ fontSize: "0.72rem", color: "rgba(212,185,106,0.5)", letterSpacing: "0.08em", marginTop: "0.35rem", textTransform: "uppercase" }}>{label}</div>
+                  <div style={{ fontSize: "0.72rem", color: "rgba(232,205,122,0.68)", letterSpacing: "0.08em", marginTop: "0.35rem", textTransform: "uppercase" }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -400,7 +400,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1rem", fontWeight: 600, color: "#fff" }}>Fábio Dias Neumann</div>
-                  <div style={{ fontSize: "0.72rem", color: "rgba(212,185,106,0.6)", letterSpacing: "0.06em", marginTop: 2 }}>Especialista em Proteção Patrimonial</div>
+                  <div style={{ fontSize: "0.72rem", color: "rgba(232,205,122,0.78)", letterSpacing: "0.06em", marginTop: 2 }}>Especialista em Proteção Patrimonial</div>
                 </div>
               </div>
             </div>
@@ -451,10 +451,10 @@ export default function Home() {
               Mais de uma década<br />
               <span className="text-gold-gradient">protegendo quem importa</span>
             </h2>
-            <p className="reveal reveal-delay-2" style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(212,185,106,0.62)", marginBottom: "1.25rem" }}>
+            <p className="reveal reveal-delay-2" style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(232,205,122,0.8)", marginBottom: "1.25rem" }}>
               Atuamos no desenvolvimento de soluções estratégicas voltadas à proteção patrimonial, ao planejamento financeiro e à gestão de riscos, assegurando que nossos clientes estejam plenamente preparados para qualquer cenário econômico.
             </p>
-            <p className="reveal reveal-delay-3" style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(212,185,106,0.62)", marginBottom: "2.5rem" }}>
+            <p className="reveal reveal-delay-3" style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(232,205,122,0.8)", marginBottom: "2.5rem" }}>
               Sob a liderança do especialista Fábio Dias Neumann, que acumula 15 anos de sólida experiência, desenvolvemos estratégias personalizadas que transcendem a entrega de apólices, consolidando-se como consultorias financeiras completas para a preservação e continuidade do seu legado.
             </p>
 
@@ -467,7 +467,7 @@ export default function Home() {
                       <polyline points="2,6 5,9 10,3" stroke="#c8a84b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <span style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)" }}>{item}</span>
+                  <span style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.93)" }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -491,7 +491,7 @@ export default function Home() {
               Proteção completa em{" "}
               <span className="text-gold-gradient">todas as frentes</span>
             </h2>
-            <p style={{ fontSize: "1rem", color: "rgba(212,185,106,0.55)", maxWidth: 520, margin: "0 auto", lineHeight: 1.7 }}>
+            <p style={{ fontSize: "1rem", color: "rgba(232,205,122,0.73)", maxWidth: 520, margin: "0 auto", lineHeight: 1.7 }}>
               Soluções estratégicas desenhadas para proteger seu patrimônio, sua saúde, sua renda e a continuidade do seu negócio.
             </p>
           </div>
@@ -524,7 +524,7 @@ export default function Home() {
                     {svc.title}
                   </h3>
                   <div className="gold-line" style={{ marginBottom: "1rem" }} />
-                  <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(212,185,106,0.6)", marginBottom: svc.bullets.length ? "1rem" : 0 }}>
+                  <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(232,205,122,0.78)", marginBottom: svc.bullets.length ? "1rem" : 0 }}>
                     {svc.desc}
                   </p>
                   {svc.bullets.length > 0 && (
@@ -555,7 +555,7 @@ export default function Home() {
               Benefícios do{" "}
               <span className="text-gold-gradient">Seguro de Vida</span>
             </h2>
-            <p style={{ fontSize: "1rem", color: "rgba(212,185,106,0.55)", maxWidth: 540, margin: "0 auto", lineHeight: 1.7 }}>
+            <p style={{ fontSize: "1rem", color: "rgba(232,205,122,0.73)", maxWidth: 540, margin: "0 auto", lineHeight: 1.7 }}>
               Vantagens jurídicas, fiscais e patrimoniais que fazem do seguro de vida uma das ferramentas mais poderosas de planejamento financeiro.
             </p>
           </div>
@@ -582,7 +582,7 @@ export default function Home() {
                 </h3>
               </div>
               <div className="gold-line" />
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(232,205,122,0.78)" }}>
                 O seguro de vida não integra o espólio nem se submete ao inventário. O capital é pago de forma direta e ágil aos beneficiários, preservando o patrimônio e evitando a descapitalização da família em momentos críticos.
               </p>
             </Link>
@@ -605,7 +605,7 @@ export default function Home() {
                 </h3>
               </div>
               <div className="gold-line" />
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(232,205,122,0.78)" }}>
                 O capital segurado pago por falecimento é totalmente isento de Imposto de Renda para o beneficiário, conforme o Art. 6º da Lei 7.713. O valor chega íntegro — sem tributação e sem perdas para o Estado.
               </p>
             </Link>
@@ -629,7 +629,7 @@ export default function Home() {
                 </h3>
               </div>
               <div className="gold-line" />
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(232,205,122,0.78)" }}>
                 Você tem total autonomia para indicar qualquer pessoa como beneficiário — familiar ou não —, sem restrições legais. A indicação pode ser formal, contratual ou alterada a qualquer momento, com flexibilidade total.
               </p>
             </Link>
@@ -651,7 +651,7 @@ export default function Home() {
                 </h3>
               </div>
               <div className="gold-line" />
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)" }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(232,205,122,0.78)" }}>
                 Amparado pelo Código Civil e pelo CPC, o capital do seguro de vida é protegido contra dívidas e penhores. Credores não podem acessar esse valor — garantindo que chegue integralmente aos beneficiários.
               </p>
             </Link>
@@ -681,7 +681,7 @@ export default function Home() {
               <div style={{ fontSize: "0.68rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.5)", marginBottom: "0.5rem" }}>
                 Importante saber
               </div>
-              <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: "rgba(212,185,106,0.8)", maxWidth: 860 }}>
+              <p style={{ fontSize: "0.95rem", lineHeight: 1.8, color: "rgba(232,205,122,0.98)", maxWidth: 860 }}>
                 <strong style={{ color: "#e8c96a", fontWeight: 600 }}>O seguro de vida não compõe o espólio e não se enquadra como herança.</strong>{" "}
                 Isso garante que o capital seja pago diretamente aos beneficiários, fora do inventário e da Tabela do ITCMD, independentemente de partilha de bens — assegurando liquidez imediata para quem você ama.
               </p>
@@ -719,7 +719,7 @@ export default function Home() {
                 Pronto para proteger o que<br />
                 <span className="text-gold-gradient">você construiu?</span>
               </h2>
-              <p style={{ fontSize: "0.95rem", color: "rgba(212,185,106,0.6)", maxWidth: 440, lineHeight: 1.7 }}>
+              <p style={{ fontSize: "0.95rem", color: "rgba(232,205,122,0.78)", maxWidth: 440, lineHeight: 1.7 }}>
                 Fale diretamente com o especialista Fábio Dias Neumann e receba uma análise personalizada para o seu perfil.
               </p>
             </div>
@@ -747,7 +747,7 @@ export default function Home() {
             <h2 className="heading-serif" style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)" }}>
               Fale com o <span className="text-gold-gradient">especialista</span>
             </h2>
-            <p style={{ fontSize: "1rem", color: "rgba(212,185,106,0.55)", maxWidth: 480, margin: "1rem auto 0", lineHeight: 1.7 }}>
+            <p style={{ fontSize: "1rem", color: "rgba(232,205,122,0.73)", maxWidth: 480, margin: "1rem auto 0", lineHeight: 1.7 }}>
               Preencha o formulário e entraremos em contato em breve. Ou escolha o canal de preferência.
             </p>
           </div>
@@ -785,7 +785,7 @@ export default function Home() {
 
               <div className="glass-card" style={{ borderRadius: 16, padding: "1.5rem" }}>
                 <div style={{ fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(200,168,75,0.5)", marginBottom: "0.75rem" }}>Atendimento</div>
-                <p style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.7)", lineHeight: 1.7 }}>
+                <p style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.88)", lineHeight: 1.7 }}>
                   Fábio Dias Neumann responde pessoalmente a cada contato. Especialista com 15 anos de experiência em proteção patrimonial e planejamento financeiro.
                 </p>
               </div>
@@ -804,7 +804,7 @@ export default function Home() {
             {/* Col 1: Brand */}
             <div>
               <LogoTransparent height={108} style={{ marginBottom: "1.25rem" }} />
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.5)", maxWidth: 320, marginBottom: "1.5rem" }}>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(232,205,122,0.68)", maxWidth: 320, marginBottom: "1.5rem" }}>
                 Soluções estratégicas em proteção patrimonial, planejamento financeiro e gestão de riscos para pessoas, famílias e empresas.
               </p>
               <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -828,9 +828,9 @@ export default function Home() {
               <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "1.25rem" }}>Navegação</div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {[["#sobre", "Sobre Nós"], ["#solucoes", "Soluções"], ["#beneficios", "Benefícios"], ["#contato", "Contato"]].map(([href, label]) => (
-                  <a key={href} href={href} style={{ fontSize: "0.875rem", color: "rgba(212,185,106,0.55)", textDecoration: "none", transition: "color 0.2s" }}
+                  <a key={href} href={href} style={{ fontSize: "0.875rem", color: "rgba(232,205,122,0.73)", textDecoration: "none", transition: "color 0.2s" }}
                     onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#c8a84b"; }}
-                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(212,185,106,0.55)"; }}>
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(232,205,122,0.73)"; }}>
                     {label}
                   </a>
                 ))}
@@ -844,20 +844,20 @@ export default function Home() {
                 <div>
                   <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>WhatsApp</div>
                   <a href="https://wa.me/5511992490109" target="_blank" rel="noopener noreferrer"
-                    style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)", textDecoration: "none" }}>
+                    style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.93)", textDecoration: "none" }}>
                     (11) 99249-0109
                   </a>
                 </div>
                 <div>
                   <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>Instagram</div>
                   <a href="https://instagram.com/famajo_corretora" target="_blank" rel="noopener noreferrer"
-                    style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)", textDecoration: "none" }}>
+                    style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.93)", textDecoration: "none" }}>
                     @famajo_corretora
                   </a>
                 </div>
                 <div>
                   <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>Especialista</div>
-                  <div style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)" }}>Fábio Dias Neumann</div>
+                  <div style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.93)" }}>Fábio Dias Neumann</div>
                 </div>
               </div>
             </div>
@@ -865,10 +865,10 @@ export default function Home() {
 
           {/* Bottom bar */}
           <div style={{ borderTop: "1px solid rgba(200,168,75,0.08)", padding: "1.5rem 0", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-            <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.25)" }}>
+            <p style={{ fontSize: "0.75rem", color: "rgba(232,205,122,0.43)" }}>
               © {new Date().getFullYear()} Famajo Corretora · Fábio Dias Neumann. Todos os direitos reservados.
             </p>
-            <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.2)" }}>
+            <p style={{ fontSize: "0.75rem", color: "rgba(232,205,122,0.38)" }}>
               SUSEP · Corretora de Seguros Autorizada
             </p>
           </div>

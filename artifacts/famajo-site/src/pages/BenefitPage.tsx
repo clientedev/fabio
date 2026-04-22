@@ -48,7 +48,7 @@ export default function BenefitPage() {
               className="text-gold-gradient">
               {data.title}
             </h1>
-            <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.2rem)", color: "rgba(212,185,106,0.7)", maxWidth: 600, lineHeight: 1.6 }}>
+            <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.2rem)", color: "rgba(232,205,122,0.88)", maxWidth: 600, lineHeight: 1.6 }}>
               {data.tagline}
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function BenefitPage() {
       {/* ─── Intro ─── */}
       <section style={{ padding: "4rem 1.25rem", maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
         <div style={{ width: 56, height: 2, background: "linear-gradient(90deg, transparent, #c8a84b, transparent)", margin: "0 auto 2rem" }} />
-        <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: "rgba(212,185,106,0.72)" }}>{data.intro}</p>
+        <p style={{ fontSize: "1.05rem", lineHeight: 1.85, color: "rgba(232,205,122,0.9)" }}>{data.intro}</p>
         {data.legalRef && (
           <div style={{ display: "inline-block", marginTop: "2rem", background: "rgba(200,168,75,0.06)", border: "1px solid rgba(200,168,75,0.2)", borderRadius: 8, padding: "0.625rem 1.25rem", fontSize: "0.75rem", letterSpacing: "0.08em", color: "#c8a84b" }}>
             📖 Amparo Legal: {data.legalRef}
@@ -77,7 +77,7 @@ export default function BenefitPage() {
                 </svg>
               </div>
               <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.05rem", color: "#d4b96a", marginBottom: "0.75rem" }}>{d.title}</h3>
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(212,185,106,0.55)" }}>{d.desc}</p>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(232,205,122,0.73)" }}>{d.desc}</p>
             </div>
           ))}
         </div>
@@ -100,7 +100,7 @@ export default function BenefitPage() {
             </div>
             <div style={{ flex: 1, minWidth: 200 }}>
               <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.5)", marginBottom: "0.75rem" }}>Importante Saber</div>
-              <p style={{ fontSize: "0.975rem", lineHeight: 1.8, color: "rgba(212,185,106,0.72)" }}>{data.highlight}</p>
+              <p style={{ fontSize: "0.975rem", lineHeight: 1.8, color: "rgba(232,205,122,0.9)" }}>{data.highlight}</p>
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function BenefitPage() {
             className="text-gold-gradient">
             Quero aproveitar este benefício
           </h2>
-          <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "rgba(212,185,106,0.55)", marginBottom: "2.5rem" }}>
+          <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "rgba(232,205,122,0.73)", marginBottom: "2.5rem" }}>
             Converse com Fábio Dias Neumann e descubra como estruturar seu seguro para obter todos esses benefícios de forma legal e eficiente.
           </p>
           <a

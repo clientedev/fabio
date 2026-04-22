@@ -48,7 +48,7 @@ export default function ServicePage() {
               className="text-gold-gradient">
               {data.title}
             </h1>
-            <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.2rem)", color: "rgba(212,185,106,0.7)", maxWidth: 600, lineHeight: 1.6 }}>
+            <p style={{ fontSize: "clamp(0.95rem, 2vw, 1.2rem)", color: "rgba(232,205,122,0.88)", maxWidth: 600, lineHeight: 1.6 }}>
               {data.tagline}
             </p>
           </div>
@@ -61,13 +61,13 @@ export default function ServicePage() {
           <div className="layout-grid-intro">
             <div>
               <div style={{ width: 56, height: 2, background: "linear-gradient(90deg, #c8a84b, transparent)", marginBottom: "1.5rem" }} />
-              <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(212,185,106,0.75)" }}>{data.intro}</p>
+              <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(232,205,122,0.93)" }}>{data.intro}</p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
               {data.stats.map((s) => (
                 <div key={s.label} style={{ background: "rgba(20,30,48,0.6)", border: "1px solid rgba(200,168,75,0.15)", borderRadius: 12, padding: "1.25rem 1.5rem" }}>
                   <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "2rem", fontWeight: 700 }} className="text-gold-gradient">{s.value}</div>
-                  <div style={{ fontSize: "0.8rem", color: "rgba(212,185,106,0.45)", marginTop: "0.25rem" }}>{s.label}</div>
+                  <div style={{ fontSize: "0.8rem", color: "rgba(232,205,122,0.63)", marginTop: "0.25rem" }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -75,7 +75,7 @@ export default function ServicePage() {
         ) : (
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ width: 56, height: 2, background: "linear-gradient(90deg, #c8a84b, transparent)", marginBottom: "1.5rem" }} />
-            <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(212,185,106,0.75)" }}>{data.intro}</p>
+            <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(232,205,122,0.93)" }}>{data.intro}</p>
           </div>
         )}
       </section>
@@ -95,7 +95,7 @@ export default function ServicePage() {
                 </svg>
               </div>
               <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "1.05rem", color: "#d4b96a", marginBottom: "0.75rem" }}>{f.title}</h3>
-              <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(212,185,106,0.55)" }}>{f.desc}</p>
+              <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "rgba(232,205,122,0.73)" }}>{f.desc}</p>
             </div>
           ))}
         </div>
@@ -115,7 +115,7 @@ export default function ServicePage() {
                   {step.num}
                 </div>
                 <h3 style={{ fontSize: "1rem", fontWeight: 600, color: "#c8a84b", marginBottom: "0.5rem" }}>{step.title}</h3>
-                <p style={{ fontSize: "0.85rem", lineHeight: 1.7, color: "rgba(212,185,106,0.5)" }}>{step.desc}</p>
+                <p style={{ fontSize: "0.85rem", lineHeight: 1.7, color: "rgba(232,205,122,0.68)" }}>{step.desc}</p>
               </div>
             ))}
           </div>
@@ -130,7 +130,7 @@ export default function ServicePage() {
               className="text-gold-gradient">
               Para Quem é Esta Solução?
             </h2>
-            <p style={{ fontSize: "0.95rem", lineHeight: 1.75, color: "rgba(212,185,106,0.6)", marginBottom: "2rem" }}>
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.75, color: "rgba(232,205,122,0.78)", marginBottom: "2rem" }}>
               Esta solução é ideal para quem valoriza segurança, planejamento e quer garantir o melhor para si e para quem ama. Se você se identifica com algum dos perfis abaixo, vamos conversar.
             </p>
           </div>
@@ -140,7 +140,7 @@ export default function ServicePage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 6L9 17l-5-5" />
                 </svg>
-                <span style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.7)" }}>{item}</span>
+                <span style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.88)" }}>{item}</span>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function ServicePage() {
             className="text-gold-gradient">
             Pronto para dar o próximo passo?
           </h2>
-          <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "rgba(212,185,106,0.55)", marginBottom: "2.5rem" }}>
+          <p style={{ fontSize: "1rem", lineHeight: 1.75, color: "rgba(232,205,122,0.73)", marginBottom: "2.5rem" }}>
             Fale com Fábio Dias Neumann e receba uma análise personalizada, sem compromisso.
           </p>
           <a

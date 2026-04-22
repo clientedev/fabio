@@ -20,7 +20,7 @@ export function SiteFooter() {
         <div className="layout-grid-footer">
           <div>
             <Logo height={108} />
-            <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(212,185,106,0.5)", maxWidth: 320, margin: "1.25rem 0 1.5rem" }}>
+            <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "rgba(232,205,122,0.68)", maxWidth: 320, margin: "1.25rem 0 1.5rem" }}>
               Soluções estratégicas em proteção patrimonial, planejamento financeiro e gestão de riscos para pessoas, famílias e empresas.
             </p>
             <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -37,9 +37,9 @@ export function SiteFooter() {
             <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(200,168,75,0.45)", marginBottom: "1.25rem" }}>Navegação</div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               {[["/#sobre", "Sobre Nós"], ["/#solucoes", "Soluções"], ["/#beneficios", "Benefícios"], ["/#contato", "Contato"]].map(([href, label]) => (
-                <a key={href} href={href} style={{ fontSize: "0.875rem", color: "rgba(212,185,106,0.55)", textDecoration: "none", transition: "color 0.2s" }}
+                <a key={href} href={href} style={{ fontSize: "0.875rem", color: "rgba(232,205,122,0.73)", textDecoration: "none", transition: "color 0.2s" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#c8a84b"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(212,185,106,0.55)"; }}>
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(232,205,122,0.73)"; }}>
                   {label}
                 </a>
               ))}
@@ -52,22 +52,22 @@ export function SiteFooter() {
               {[["WhatsApp", "https://wa.me/5511992490109", "(11) 99249-0109"], ["Instagram", "https://instagram.com/famajo_corretora", "@famajo_corretora"]].map(([label, href, text]) => (
                 <div key={label}>
                   <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>{label}</div>
-                  <a href={href} target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)", textDecoration: "none" }}>{text}</a>
+                  <a href={href} target="_blank" rel="noopener noreferrer" style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.93)", textDecoration: "none" }}>{text}</a>
                 </div>
               ))}
               <div>
                 <div style={{ fontSize: "0.7rem", color: "rgba(200,168,75,0.4)", marginBottom: "0.25rem" }}>Especialista</div>
-                <div style={{ fontSize: "0.9rem", color: "rgba(212,185,106,0.75)" }}>Fábio Dias Neumann</div>
+                <div style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.93)" }}>Fábio Dias Neumann</div>
               </div>
             </div>
           </div>
         </div>
 
         <div style={{ borderTop: "1px solid rgba(200,168,75,0.08)", padding: "1.5rem 0", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.25)" }}>
+          <p style={{ fontSize: "0.75rem", color: "rgba(232,205,122,0.43)" }}>
             © {new Date().getFullYear()} Famajo Corretora · Fábio Dias Neumann. Todos os direitos reservados.
           </p>
-          <p style={{ fontSize: "0.75rem", color: "rgba(212,185,106,0.2)" }}>SUSEP · Corretora de Seguros Autorizada</p>
+          <p style={{ fontSize: "0.75rem", color: "rgba(232,205,122,0.38)" }}>SUSEP · Corretora de Seguros Autorizada</p>
         </div>
       </div>
     </footer>
