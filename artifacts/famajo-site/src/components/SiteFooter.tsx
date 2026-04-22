@@ -15,7 +15,7 @@ const IG_PATH = "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919
 
 export function SiteFooter() {
   return (
-    <footer style={{ borderTop: "1px solid rgba(200,168,75,0.1)", background: "rgba(8,12,22,0.98)", paddingTop: "4rem" }}>
+    <footer style={{ borderTop: "1px solid rgba(200,168,75,0.1)", background: "#0E0E55", paddingTop: "4rem" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 1.25rem" }}>
         <div className="layout-grid-footer">
           <div>
