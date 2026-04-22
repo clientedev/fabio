@@ -27,7 +27,8 @@ export function SiteNav() {
         background: "#03081a",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        borderBottom: "1px solid rgba(200,168,75,0.1)",
+        borderBottom: "2px solid #c8a84b",
+        boxShadow: "0 6px 24px rgba(0,0,0,0.55)",
       }}>
         <div style={{
           maxWidth: 1200, margin: "0 auto", padding: "0 1.25rem",
