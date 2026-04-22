@@ -38,7 +38,7 @@ export default function ServicePage() {
           alt={data.title}
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
         />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,14,26,1) 0%, rgba(10,14,26,0.7) 50%, rgba(10,14,26,0.25) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(26,36,64,1) 0%, rgba(26,36,64,0.7) 50%, rgba(26,36,64,0.25) 100%)" }} />
         <div style={{ position: "relative", width: "100%", maxWidth: 1200, margin: "0 auto", padding: "0 1.25rem 3rem" }}>
           <div className="fade-up" style={{ animationDelay: "0.1s" }}>
             <div style={{ display: "inline-block", background: "rgba(200,168,75,0.1)", border: "1px solid rgba(200,168,75,0.3)", borderRadius: 100, padding: "0.35rem 1rem", fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
@@ -57,20 +57,27 @@ export default function ServicePage() {
 
       {/* ─── Intro + Stats ─── */}
       <section style={{ padding: "4rem 1.25rem", maxWidth: 1200, margin: "0 auto" }}>
-        <div className="layout-grid-intro">
-          <div>
+        {data.stats.length > 0 ? (
+          <div className="layout-grid-intro">
+            <div>
+              <div style={{ width: 56, height: 2, background: "linear-gradient(90deg, #c8a84b, transparent)", marginBottom: "1.5rem" }} />
+              <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(212,185,106,0.75)" }}>{data.intro}</p>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+              {data.stats.map((s) => (
+                <div key={s.label} style={{ background: "rgba(20,30,48,0.6)", border: "1px solid rgba(200,168,75,0.15)", borderRadius: 12, padding: "1.25rem 1.5rem" }}>
+                  <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "2rem", fontWeight: 700 }} className="text-gold-gradient">{s.value}</div>
+                  <div style={{ fontSize: "0.8rem", color: "rgba(212,185,106,0.45)", marginTop: "0.25rem" }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ width: 56, height: 2, background: "linear-gradient(90deg, #c8a84b, transparent)", marginBottom: "1.5rem" }} />
             <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(212,185,106,0.75)" }}>{data.intro}</p>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-            {data.stats.map((s) => (
-              <div key={s.label} style={{ background: "rgba(20,30,48,0.6)", border: "1px solid rgba(200,168,75,0.15)", borderRadius: 12, padding: "1.25rem 1.5rem" }}>
-                <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "2rem", fontWeight: 700 }} className="text-gold-gradient">{s.value}</div>
-                <div style={{ fontSize: "0.8rem", color: "rgba(212,185,106,0.45)", marginTop: "0.25rem" }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        )}
       </section>
 
       {/* ─── Features ─── */}

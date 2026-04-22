@@ -155,8 +155,8 @@ export const benefitsData: Record<string, BenefitData> = {
     category: "Proteção Jurídica",
     title: "Impenhorabilidade",
     tagline: "Credores não podem alcançar o capital destinado aos seus beneficiários",
-    intro: "Amparado pelo Código Civil e pelo Código de Processo Civil, o capital do seguro de vida é protegido contra penhoras e execuções. Isso significa que, independentemente de dívidas, processos ou execuções contra o segurado ou seus herdeiros, o valor do seguro chega integralmente aos beneficiários.",
-    legalRef: "Código Civil, Art. 649, VII — CPC, Art. 833, VII",
+    intro: "De acordo com o Artigo 833, inciso VI, do Código de Processo Civil (CPC), o seguro de vida é considerado um bem absolutamente impenhorável. Isso significa que, independentemente de dívidas, processos ou execuções contra o segurado ou seus herdeiros, o valor do seguro chega integralmente aos beneficiários.",
+    legalRef: "Código de Processo Civil, Art. 833, VI",
     details: [
       {
         icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z",

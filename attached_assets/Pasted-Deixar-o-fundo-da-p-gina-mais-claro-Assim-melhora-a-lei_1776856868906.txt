@@ -1,0 +1,123 @@
+Deixar o fundo da página mais claro. Assim melhora a leitura das palavras em dourado.
+
+
+
+Retirar a frase do
+15 ANOS TRANSFORMANDO RISCOS EM TRANQUILIDADE
+
+Alterar:
+Mais de uma década
+protegendo quem importa
+Esse vai ser o texto
+"Atuamos no desenvolvimento de soluções estratégicas voltadas à proteção patrimonial, ao planejamento financeiro e à gestão de riscos, assegurando que nossos clientes estejam plenamente preparados para qualquer cenário econômico. 
+Sob a liderança do especialista Fábio Dias Neumann, que acumula 15 anos de sólida experiência, desenvolvemos estratégias personalizadas que transcendem a entrega de apólices, consolidando-se como consultorias financeiras completas para a preservação e continuidade do seu legado."
+Mantenha os tópicos
+
+Consórcios
+Texto
+Diferente das modalidades de crédito tradicionais, o consórcio oferece uma estrutura de custos mais eficiente, pautada na ausência de juros e na previsibilidade financeira. Nossa consultoria atua na identificação das melhores oportunidades de mercado, desenhando estratégias personalizadas para a aquisição de imóveis, veículos leves, pesados ou serviços, garantindo que o seu crescimento patrimonial seja sustentável e planejado.
+
+
+TÓPICOS
+
+Imoveis	
+Veículos
+Máquinas
+Servicos
+ 
+
+
+
+
+Corrigir (O QUE ESTA INCLUSO)
+Proteção para Sua Família
+Em caso de falecimento, sua família recebe capital suficiente para manter o padrão de vida, quitar dívidas e garantir a educação dos filhos.
+
+Corrigir
+(COMO FUNCIONA)
+Contratação Simplificada
+Processo de contratação com suporte completo, do especialista, em cada etapa.
+
+Corrigir
+Retirar esse tópico:
+Quem possui dívidas ou financiamentos
+
+Corrigir
+Diárias de Internação Hospitalar
+Com o seguro de Diária de Internação Hospitalar (DIH), você recebe um suporte financeiro por dia internado para usar como quiser, seja com despesas médicas ou pessoais.
+
+Risco Cirúrgico, Rupturas e Quebra de Ossos
+Garante o pagamento de capital segurado específico em decorrência de eventos cirúrgicos, rupturas e fraturas ósseas
+
+Sucessão Empresarial
+
+Eventualidades envolvendo o quadro societário frequentemente expõem as empresas a vulnerabilidades críticas, como a fragmentação do capital e a entrada de herdeiros despreparados na gestão. 
+Mediante um planejamento sucessório amparado por seguro específico, é possível mitigar esses riscos de forma antecipada. Esta solução provê os recursos necessários para a liquidação de haveres, prevenindo disputas judiciais e garantindo a saúde financeira da operação."
+
+Retirar os quadros laterais de 70% - 100% e 0%
+Proteção Contra Descapitalização
+
+"Sem o amparo de um seguro estruturado, a empresa expõe seu imobilizado a riscos de alienação para o cumprimento de obrigações emergenciais. A disponibilidade do capital segurado mitiga essa vulnerabilidade, garantindo a integridade dos ativos e a manutenção da capacidade produtiva da companhia."
+
+
+Consórcios
+Adquira bens e serviços de forma planejada, sem pagar juros
+
+
+"O consórcio consolida-se como uma alternativa estratégica ao financiamento convencional, permitindo a aquisição programada de ativos sem a incidência das elevadas taxas de juros bancárias. 
+Por meio de um planejamento rigoroso e assessoria técnica especializada, estruturamos a solução ideal para cada objetivo — seja na expansão de frotas, aquisição imobiliária ou contratação de serviços — otimizando o fluxo de caixa e o retorno sobre o investimento."
+
+Retirar os quadros laterais
+
+Veículos (retirar motos)
+
+Troque de veículo ou faça sua primeira aquisição de forma estratégica. Com o consórcio, você evita o sobrepreço do financiamento e investe apenas no valor real do bem, garantindo mais poder de compra.
+
+
+Plano de Saúde
+Acesso à melhor saúde com o custo mais inteligente
+
+
+Diante da crescente inflação médica e dos reajustes anuais, a gestão eficiente dos benefícios de saúde tornou-se essencial. Nossa assessoria realiza uma auditoria completa na sua apólice atual para mitigar custos desnecessários e identificar desperdícios. 
+Focamos na entrega de uma solução que concilie equilíbrio financeiro com o acesso à rede hospitalar de excelência e atendimento de referência, seja para o perfil individual, familiar ou corporativo.
+
+
+Análise do Plano Atual
+
+"Realizamos uma auditoria detalhada em sua apólice vigente para mitigar riscos de coberturas insuficientes e identificar reajustes descolados do mercado. 
+Nosso foco é viabilizar a migração estratégica para redes hospitalares superiores, mantendo o equilíbrio financeiro ou reduzindo o custo operacional."
+
+Plano Individual e Familiar
+
+Soluções de saúde sob medida para cada momento da sua vida.
+Selecionamos planos que combinam a rede médica mais estratégica com coberturas específicas para todas as idades e necessidades especiais, assegurando atendimento de alta qualidade e conveniência em qualquer cenário
+
+
+Plano Empresarial
+
+As soluções de saúde coletivas empresariais oferecem uma estrutura de custos significativamente mais competitiva em comparação aos planos individuais, entregando coberturas superiores. Além de otimizar o investimento da companhia, este é um dos benefícios mais valorizados pelos colaboradores, atuando diretamente na retenção de talentos e no fortalecimento do clima organizacional."
+
+
+
+
+
+Acompanhamento no Reajuste
+
+
+A cada renovação, realizamos uma auditoria de mercado para confrontar o seu plano atual com as melhores alternativas disponíveis. 
+Esse acompanhamento contínuo garante que sua estrutura de saúde permaneça otimizada, evitando que reajustes automáticos comprometam seu orçamento e assegurando que você invista sempre no melhor custo-benefício disponível
+
+Assistência Médica e Odontológica
+
+
+"Acesso global às melhores redes hospitalares do mundo para emergências. Uma estrutura desenhada para oferecer atendimento médico de alta performance com máxima agilidade e zero burocracia, onde quer que você esteja."
+
+
+
+De acordo com o Artigo 833, inciso VI, do Código de Processo Civil (CPC), o seguro de vida é considerado um bem absolutamente impenhorável.
+
+
+Benefícios do Seguro de Vida
+Retire todos os “entenda na prática”
+
+Deixar só os tópicos e explicação básicas

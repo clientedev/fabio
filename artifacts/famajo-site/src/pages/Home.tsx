@@ -88,8 +88,8 @@ const services = [
     imageUrl: "/service-consorcio.png",
     title: "Consórcios",
     subtitle: "Aquisição planejada sem juros",
-    desc: "Planejamento estratégico para aquisição de bens e serviços sem o peso dos juros.",
-    bullets: ["Imóveis", "Veículos e motos", "Caminhões", "Serviços e consórcio empresarial"],
+    desc: "Diferente das modalidades de crédito tradicionais, o consórcio oferece uma estrutura de custos mais eficiente, pautada na ausência de juros e na previsibilidade financeira. Nossa consultoria atua na identificação das melhores oportunidades de mercado, desenhando estratégias personalizadas para a aquisição de imóveis, veículos leves, pesados ou serviços, garantindo que o seu crescimento patrimonial seja sustentável e planejado.",
+    bullets: ["Imóveis", "Veículos", "Máquinas", "Serviços"],
   },
   {
     slug: "plano-de-saude",
@@ -251,12 +251,12 @@ export default function Home() {
   const navLinks: [string, string][] = [["#sobre", "Sobre"], ["#solucoes", "Soluções"], ["#contato", "Contato"]];
 
   return (
-    <div style={{ backgroundColor: "#0d1220", fontFamily: "'Inter', sans-serif", overflowX: "hidden" }}>
+    <div style={{ backgroundColor: "#1a2440", fontFamily: "'Inter', sans-serif", overflowX: "hidden" }}>
 
       {/* ─── NAVBAR ─── */}
       <header style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        background: "rgba(10,14,26,0.96)",
+        background: "rgba(26,36,64,0.96)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
         borderBottom: "1px solid rgba(200,168,75,0.1)",
@@ -313,7 +313,7 @@ export default function Home() {
         {/* Dark navy film over photos */}
         <div style={{
           position: "absolute", inset: 0, zIndex: 1,
-          background: "linear-gradient(135deg, rgba(10,15,28,0.88) 0%, rgba(13,18,32,0.82) 50%, rgba(10,15,28,0.75) 100%)",
+          background: "linear-gradient(135deg, rgba(22,32,56,0.88) 0%, rgba(36,48,86,0.82) 50%, rgba(22,32,56,0.75) 100%)",
         }} />
 
         <div className="noise-overlay" style={{ zIndex: 2 }} />
@@ -326,10 +326,6 @@ export default function Home() {
 
           {/* Left */}
           <div>
-            <div className="section-label reveal" style={{ marginBottom: "1.5rem" }}>
-              15 anos transformando riscos em tranquilidade
-            </div>
-
             <h1 className="heading-serif reveal reveal-delay-1" style={{ fontSize: "clamp(2.6rem, 5vw, 4rem)", marginBottom: "1.5rem", letterSpacing: "-0.01em" }}>
               Proteção que vai{" "}
               <em className="text-gold-gradient" style={{ fontStyle: "italic" }}>além do seguro</em>
@@ -388,7 +384,7 @@ export default function Home() {
               {/* Name badge */}
               <div style={{
                 position: "absolute", bottom: 24, left: 20, right: 20,
-                background: "rgba(13,18,32,0.88)",
+                background: "rgba(36,48,86,0.88)",
                 backdropFilter: "blur(20px)",
                 WebkitBackdropFilter: "blur(20px)",
                 border: "1px solid rgba(200,168,75,0.3)",
@@ -397,7 +393,7 @@ export default function Home() {
                 display: "flex", alignItems: "center", gap: "0.875rem",
               }}>
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: "linear-gradient(135deg,#c8a84b,#e8c96a)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d1220" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a2440" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                     <circle cx="12" cy="7" r="4"/>
                   </svg>
@@ -419,13 +415,13 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT ─── */}
-      <section id="sobre" style={{ background: "linear-gradient(180deg, #0d1220 0%, #101828 100%)", padding: "8rem 1.25rem" }}>
+      <section id="sobre" style={{ background: "linear-gradient(180deg, #1a2440 0%, #202c4d 100%)", padding: "8rem 1.25rem" }}>
         <div className="layout-grid-2col" style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Left visual: logo + quote card */}
           <div className="reveal" style={{ position: "relative" }}>
             <div style={{
-              background: "#0c1120",
+              background: "#192340",
               border: "1px solid rgba(200,168,75,0.15)",
               borderRadius: 24,
               padding: "3rem",
@@ -456,10 +452,10 @@ export default function Home() {
               <span className="text-gold-gradient">protegendo quem importa</span>
             </h2>
             <p className="reveal reveal-delay-2" style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(212,185,106,0.62)", marginBottom: "1.25rem" }}>
-              Atuamos com soluções estratégicas para proteção patrimonial, planejamento financeiro e gestão de riscos — ajudando nossos clientes a estarem preparados para qualquer cenário.
+              Atuamos no desenvolvimento de soluções estratégicas voltadas à proteção patrimonial, ao planejamento financeiro e à gestão de riscos, assegurando que nossos clientes estejam plenamente preparados para qualquer cenário econômico.
             </p>
             <p className="reveal reveal-delay-3" style={{ fontSize: "1rem", lineHeight: 1.8, color: "rgba(212,185,106,0.62)", marginBottom: "2.5rem" }}>
-              Com 15 anos de experiência, o especialista Fábio Dias Neumann constrói soluções personalizadas que vão além de apólices — são estratégias financeiras completas para proteger o que você construiu.
+              Sob a liderança do especialista Fábio Dias Neumann, que acumula 15 anos de sólida experiência, desenvolvemos estratégias personalizadas que transcendem a entrega de apólices, consolidando-se como consultorias financeiras completas para a preservação e continuidade do seu legado.
             </p>
 
             {/* Feature list */}
@@ -485,7 +481,7 @@ export default function Home() {
       </div>
 
       {/* ─── SERVICES ─── */}
-      <section id="solucoes" style={{ padding: "8rem 1.25rem", background: "linear-gradient(180deg, #101828 0%, #0d1220 100%)" }}>
+      <section id="solucoes" style={{ padding: "8rem 1.25rem", background: "linear-gradient(180deg, #202c4d 0%, #1a2440 100%)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Header */}
@@ -517,7 +513,7 @@ export default function Home() {
                     alt={svc.title}
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", filter: "brightness(0.85) contrast(1.05)" }}
                   />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(13,18,32,0.9) 100%)" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, rgba(36,48,86,0.9) 100%)" }} />
                 </div>
                 <div style={{ padding: "1.5rem" }}>
                   <div className="service-icon">{svc.icon}</div>
@@ -549,7 +545,7 @@ export default function Home() {
       </section>
 
       {/* ─── BENEFÍCIOS DO SEGURO DE VIDA ─── */}
-      <section id="beneficios" style={{ padding: "8rem 1.25rem", background: "linear-gradient(180deg, #0d1220 0%, #0a0f1c 100%)" }}>
+      <section id="beneficios" style={{ padding: "8rem 1.25rem", background: "linear-gradient(180deg, #1a2440 0%, #162038 100%)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           {/* Header */}
