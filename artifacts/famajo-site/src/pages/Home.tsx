@@ -358,18 +358,18 @@ export default function Home() {
           </div>
 
           {/* Right — Fábio photo */}
-          <div className="hero-photo-col reveal reveal-delay-2" style={{ display: "flex", justifyContent: "flex-end", position: "relative" }}>
-            {/* Decorative frame */}
-            <div style={{
-              position: "absolute", top: 20, right: 20, bottom: -20, left: 20,
-              border: "1px solid rgba(200,168,75,0.2)", borderRadius: 24,
-              pointerEvents: "none",
-            }} />
-            {/* Gold corner accents */}
-            <div style={{ position: "absolute", top: 8, left: 8, width: 32, height: 32, borderTop: "2px solid #c8a84b", borderLeft: "2px solid #c8a84b", borderRadius: "4px 0 0 0", zIndex: 2 }} />
-            <div style={{ position: "absolute", bottom: -10, right: 30, width: 32, height: 32, borderBottom: "2px solid #c8a84b", borderRight: "2px solid #c8a84b", borderRadius: "0 0 4px 0", zIndex: 2 }} />
-
+          <div className="hero-photo-col reveal reveal-delay-2" style={{ display: "flex", justifyContent: "flex-end" }}>
             <div style={{ position: "relative" }}>
+              {/* Decorative frame — symmetric alignment */}
+              <div style={{
+                position: "absolute", top: -16, right: -16, bottom: -16, left: -16,
+                border: "1px solid rgba(200,168,75,0.15)", borderRadius: 28,
+                pointerEvents: "none",
+              }} />
+              {/* Gold corner accents — symmetric alignment */}
+              <div style={{ position: "absolute", top: -8, left: -8, width: 32, height: 32, borderTop: "2px solid #c8a84b", borderLeft: "2px solid #c8a84b", borderRadius: "4px 0 0 0", zIndex: 2 }} />
+              <div style={{ position: "absolute", bottom: -8, right: -8, width: 32, height: 32, borderBottom: "2px solid #c8a84b", borderRight: "2px solid #c8a84b", borderRadius: "0 0 4px 0", zIndex: 2 }} />
+
               <img
                 src={fabioImg}
                 alt="Fábio Dias Neumann"
