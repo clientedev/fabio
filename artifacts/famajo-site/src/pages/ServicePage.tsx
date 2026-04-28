@@ -123,27 +123,20 @@ export default function ServicePage() {
       </section>
 
       {/* ─── Who needs ─── */}
-      <section style={{ padding: "4rem 1.25rem", maxWidth: 1200, margin: "0 auto" }}>
-        <div className="layout-grid-2col">
-          <div>
-            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", marginBottom: "1.5rem" }}
-              className="text-gold-gradient">
-              Para Quem é Esta Solução?
-            </h2>
-            <p style={{ fontSize: "0.95rem", lineHeight: 1.75, color: "rgba(232,205,122,0.78)", marginBottom: "2rem" }}>
-              Esta solução é ideal para quem valoriza segurança, planejamento e quer garantir o melhor para si e para quem ama. Se você se identifica com algum dos perfis abaixo, vamos conversar.
-            </p>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-            {data.who.map((item, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.875rem", background: "rgba(200,168,75,0.04)", border: "1px solid rgba(200,168,75,0.12)", borderRadius: 10, padding: "0.875rem 1.25rem" }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-                <span style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.88)" }}>{item}</span>
-              </div>
-            ))}
-          </div>
+      <section style={{ padding: "4rem 1.25rem", maxWidth: 900, margin: "0 auto" }}>
+        <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", marginBottom: "2rem" }}
+          className="text-gold-gradient">
+          Para quem é esta solução
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+          {data.who.map((item, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.875rem", background: "rgba(200,168,75,0.04)", border: "1px solid rgba(200,168,75,0.12)", borderRadius: 10, padding: "0.875rem 1.25rem" }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              <span style={{ fontSize: "0.9rem", color: "rgba(232,205,122,0.88)" }}>{item}</span>
+            </div>
+          ))}
         </div>
       </section>
 

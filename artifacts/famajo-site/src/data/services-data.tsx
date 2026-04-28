@@ -134,13 +134,17 @@ export const servicesData: Record<string, ServiceData> = {
     category: "Blindagem Empresarial",
     title: "Sucessão Empresarial",
     tagline: "A continuidade do seu negócio garantida, mesmo nos momentos mais críticos",
-    intro: "Eventualidades envolvendo o quadro societário frequentemente expõem as empresas a vulnerabilidades críticas, como a fragmentação do capital e a entrada de herdeiros despreparados na gestão. Mediante um planejamento sucessório amparado por seguro específico, é possível mitigar esses riscos de forma antecipada. Esta solução provê os recursos necessários para a liquidação de haveres, prevenindo disputas judiciais e garantindo a saúde financeira da operação.",
-    stats: [],
+    intro: "Eventualidades envolvendo o quadro societário frequentemente expõem as empresas a vulnerabilidades críticas, como a fragmentação do capital e a entrada de terceiros na gestão. Mediante um planejamento sucessório amparado por seguro específico, é possível mitigar esses riscos de forma antecipada. Esta solução provê os recursos necessários para a liquidação de haveres, prevenindo disputas judiciais e garantindo a saúde financeira da operação.",
+    stats: [
+      { value: "70%", label: "Das empresas fecham sem plano" },
+      { value: "100%", label: "Continuidade garantida" },
+      { value: "0%", label: "Conflitos societários" },
+    ],
     features: [
       {
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944",
         title: "Compra e Venda de Cotas",
-        desc: "O capital do seguro financia a compra das cotas do sócio falecido pelos demais sócios sobreviventes, evitando a entrada de herdeiros sem preparo na gestão da empresa.",
+        desc: "O capital do seguro financia a compra das cotas do sócio falecido pelos demais sócios sobreviventes, evitando a entrada de terceiros na gestão da empresa.",
       },
       {
         icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16",
@@ -152,16 +156,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: "Pagamento de Impostos e Inventário",
         desc: "O capital cobre ITCMD, honorários advocatícios e outros custos do inventário, sem necessidade de vender ativos da empresa ou descapitalizá-la.",
       },
-      {
-        icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
-        title: "Proteção Contra Descapitalização",
-        desc: "Sem o amparo de um seguro estruturado, a empresa expõe seu imobilizado a riscos de alienação para o cumprimento de obrigações emergenciais. A disponibilidade do capital segurado mitiga essa vulnerabilidade, garantindo a integridade dos ativos e a manutenção da capacidade produtiva da companhia.",
-      },
-      {
-        icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
-        title: "Acordo de Sócios Alinhado",
-        desc: "Estruturamos o seguro em conjunto com o Acordo de Sócios (Shareholders' Agreement), criando um mecanismo jurídico sólido e tributariamente eficiente.",
-      },
+
     ],
     steps: [
       { num: "01", title: "Diagnóstico Societário", desc: "Análise do contrato social, valor das cotas e estrutura de sócios." },
@@ -170,7 +165,7 @@ export const servicesData: Record<string, ServiceData> = {
       { num: "04", title: "Implementação", desc: "Contratação do seguro e integração com o acordo de sócios existente ou novo." },
     ],
     who: ["Sócios de empresas de qualquer porte", "Empresas familiares", "Médicos e profissionais em sociedade", "Empresas com sócios majoritários", "Negócios com ativos relevantes a preservar"],
-    ctaText: "Blindar Meu CNPJ",
+    ctaText: "Proteger meu CNPJ",
   },
 
   "consorcios": {
