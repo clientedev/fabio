@@ -32,11 +32,7 @@ export const servicesData: Record<string, ServiceData> = {
     title: "Seguro de Vida Personalizado",
     tagline: "Proteção sob medida que garante o futuro de quem você ama",
     intro: "O seguro de vida personalizado é uma solução estruturada com base no seu perfil financeiro, objetivos de vida e necessidades específicas — muito além de um pacote padronizado. Garante segurança financeira em momentos inesperados, mantém o padrão de vida da sua família e protege o que você construiu ao longo dos anos.",
-    stats: [
-      { value: "15+", label: "Anos de Especialização" },
-      { value: "100%", label: "Análise Personalizada" },
-      { value: "0%", label: "Burocracia Desnecessária" },
-    ],
+    stats: [],
     features: [
       {
         icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
@@ -86,11 +82,7 @@ export const servicesData: Record<string, ServiceData> = {
     title: "Proteção Laboral",
     tagline: "Sua capacidade de trabalho protegida contra qualquer adversidade",
     intro: "A Proteção Laboral é um conjunto de coberturas que garantem continuidade financeira quando sua capacidade de gerar renda é comprometida. Doenças graves, acidentes, cirurgias ou internações — qualquer evento inesperado pode paralisar sua fonte de renda. Com a proteção certa, isso não precisa ser um desastre financeiro.",
-    stats: [
-      { value: "5", label: "Tipos de Cobertura" },
-      { value: "24h", label: "Cobertura por Dia" },
-      { value: "100%", label: "Renda Substituída" },
-    ],
+    stats: [],
     features: [
       {
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
@@ -135,11 +127,7 @@ export const servicesData: Record<string, ServiceData> = {
     title: "Sucessão Empresarial",
     tagline: "A continuidade do seu negócio garantida, mesmo nos momentos mais críticos",
     intro: "Eventualidades envolvendo o quadro societário frequentemente expõem as empresas a vulnerabilidades críticas, como a fragmentação do capital e a entrada de terceiros na gestão. Mediante um planejamento sucessório amparado por seguro específico, é possível mitigar esses riscos de forma antecipada. Esta solução provê os recursos necessários para a liquidação de haveres, prevenindo disputas judiciais e garantindo a saúde financeira da operação.",
-    stats: [
-      { value: "70%", label: "Das empresas fecham sem plano" },
-      { value: "100%", label: "Continuidade garantida" },
-      { value: "0%", label: "Conflitos societários" },
-    ],
+    stats: [],
     features: [
       {
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944",
@@ -215,11 +203,7 @@ export const servicesData: Record<string, ServiceData> = {
     title: "Plano de Saúde",
     tagline: "Acesso à melhor saúde com o custo mais inteligente",
     intro: "Diante da crescente inflação médica e dos reajustes anuais, a gestão eficiente dos benefícios de saúde tornou-se essencial. Nossa assessoria realiza uma auditoria completa na sua apólice atual para mitigar custos desnecessários e identificar desperdícios. Focamos na entrega de uma solução que concilie equilíbrio financeiro com o acesso à rede hospitalar de excelência e atendimento de referência, seja para o perfil individual, familiar ou corporativo.",
-    stats: [
-      { value: "30%", label: "Economia média possível" },
-      { value: "100%", label: "Análise sem custo" },
-      { value: "1000+", label: "Opções de planos" },
-    ],
+    stats: [],
     features: [
       {
         icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944",
@@ -258,11 +242,7 @@ export const servicesData: Record<string, ServiceData> = {
     title: "Seguro Viagem",
     tagline: "Explore o mundo com a segurança de estar sempre protegido",
     intro: "O Seguro Viagem é essencial para quem busca tranquilidade fora de casa. Mais do que uma exigência consular em muitos países, é a garantia de que, diante de imprevistos de saúde, acidentes ou problemas com bagagem, você terá todo o suporte necessário sem custos inesperados e em seu próprio idioma.",
-    stats: [
-      { value: "24h", label: "Suporte Global" },
-      { value: "100+", label: "Países Cobertos" },
-      { value: "0", label: "Preocupações" },
-    ],
+    stats: [],
     features: [
       {
         icon: "M21 12c0 1.66-4 3-9 3s-9-1.34-9-3c0-1.66 4-3 9-3s9 1.34 9 3zM3 12v6c0 1.66 4 3 9 3s9-1.34 9-3v-6",
