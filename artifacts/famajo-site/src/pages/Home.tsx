@@ -346,15 +346,7 @@ export default function Home() {
               <a href="#solucoes" className="btn-outline">Ver Soluções</a>
             </div>
 
-            {/* Stats row */}
-            <div className="reveal reveal-delay-4 hero-stats-row" style={{ display: "flex", gap: "2rem", marginTop: "3.5rem", paddingTop: "2.5rem", borderTop: "1px solid rgba(200,168,75,0.12)" }}>
-              {[["15+", "Anos de Mercado"], ["5", "Áreas de Atuação"], ["100%", "Dedicação ao Cliente"]].map(([num, label]) => (
-                <div key={label}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.75rem", fontWeight: 700, color: "#c8a84b", lineHeight: 1 }}>{num}</div>
-                  <div style={{ fontSize: "0.72rem", color: "rgba(232,205,122,0.68)", letterSpacing: "0.08em", marginTop: "0.35rem", textTransform: "uppercase" }}>{label}</div>
-                </div>
-              ))}
-            </div>
+
           </div>
 
           {/* Right — Fábio photo */}
