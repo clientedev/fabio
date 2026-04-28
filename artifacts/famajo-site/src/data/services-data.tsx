@@ -123,7 +123,7 @@ export const servicesData: Record<string, ServiceData> = {
   "sucessao-empresarial": {
     slug: "sucessao-empresarial",
     imageUrl: "/service-empresarial.png",
-    category: "Blindagem Empresarial",
+    category: "Proteção Empresarial",
     title: "Sucessão Empresarial",
     tagline: "A continuidade do seu negócio garantida, mesmo nos momentos mais críticos",
     intro: "Eventualidades envolvendo o quadro societário frequentemente expõem as empresas a vulnerabilidades críticas, como a fragmentação do capital e a entrada de terceiros na gestão. Mediante um planejamento sucessório amparado por seguro específico, é possível mitigar esses riscos de forma antecipada. Esta solução provê os recursos necessários para a liquidação de haveres, prevenindo disputas judiciais e garantindo a saúde financeira da operação.",

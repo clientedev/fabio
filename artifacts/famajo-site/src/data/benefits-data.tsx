@@ -175,8 +175,8 @@ export const benefitsData: Record<string, BenefitData> = {
       },
       {
         icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2",
-        title: "Blindagem Patrimonial",
-        desc: "Para empresários e profissionais expostos a riscos jurídicos, o seguro de vida funciona como uma camada de blindagem patrimonial — mantendo capital seguro fora do alcance de ações judiciais.",
+        title: "Proteção Patrimonial",
+        desc: "Para empresários e profissionais expostos a riscos jurídicos, o seguro de vida funciona como uma camada de proteção patrimonial — mantendo capital seguro fora do alcance de ações judiciais.",
       },
       {
         icon: "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1",
@@ -190,6 +190,6 @@ export const benefitsData: Record<string, BenefitData> = {
       },
     ],
     highlight: "Diferente de imóveis, investimentos e saldos bancários — que podem ser bloqueados judicialmente —, o capital do seguro de vida é legalmente impenhorável. O Art. 649, VII do Código Civil e o Art. 833, VII do CPC garantem que os beneficiários recebam o valor integralmente.",
-    ctaText: "Blindar Meu Patrimônio",
+    ctaText: "Proteger Meu Patrimônio",
   },
 };

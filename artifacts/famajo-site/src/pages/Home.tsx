@@ -72,7 +72,7 @@ const services = [
     ),
     imageUrl: "/service-empresarial.png",
     title: "Sucessão Empresarial",
-    subtitle: "Blindagem do CNPJ",
+    subtitle: "Proteja o CNPJ",
     desc: "Evita descapitalização e a entrada de terceiros na gestão da empresa em momentos críticos.",
     bullets: ["Compra de cotas entre sócios", "Continuidade da empresa", "Pagamento de impostos e inventário", "Honorários jurídicos"],
   },
