@@ -12,12 +12,12 @@ router.post("/contact", async (req, res) => {
   };
 
   const apiKey = process.env["RESEND_API_KEY"];
-  const toEmail = process.env["CONTACT_EMAIL"];
+  const toEmail = process.env["CONTACT_EMAIL"] || "fabio@famajocorretora.com.br";
 
-  if (!apiKey || !toEmail) {
+  if (!apiKey) {
     res.status(503).json({
       error:
-        "Email service not configured. Set RESEND_API_KEY and CONTACT_EMAIL environment variables.",
+        "Email service not configured. Set RESEND_API_KEY environment variable.",
     });
     return;
   }
